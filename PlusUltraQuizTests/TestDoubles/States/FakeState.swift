@@ -12,15 +12,8 @@ import PlusUltraQuiz
 
 final class FakeState: State {
     var hasCalledDidEnter: Bool = false
-    var hasCalledWillLeave: Bool = false
     
     func didEnter() {
         hasCalledDidEnter = true
     }
-    
-    func willLeave() {
-        hasCalledWillLeave = true
-    }
-    
-    
 }

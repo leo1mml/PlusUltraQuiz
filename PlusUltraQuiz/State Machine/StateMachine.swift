@@ -19,12 +19,13 @@ final class StateMachine {
     
     func enter(state: State) {
         if canEnter(state) {
-            currentState.willLeave()
-            state.didEnter()
+            currentState = state
+            currentState.didEnter()
         }
     }
     
     private func canEnter(_ nextState: State) -> Bool {
-        return type(of: nextState).self != type(of: currentState).self
+        let isDifferentType = type(of: nextState).self != type(of: currentState).self
+        return isDifferentType
     }
 }

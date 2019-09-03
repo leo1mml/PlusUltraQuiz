@@ -11,16 +11,45 @@ import Foundation
 final class FetchingState: State {
     
     private var dataService: DataService
+    private var presenter: QuizPresenter?
     
-    init(dataService: DataService) {
+    init(dataService: DataService, presenter: QuizPresenter) {
         self.dataService = dataService
+        self.presenter = presenter
     }
     
     func didEnter() {
-        dataService.fetchData()
+        fetchData()
     }
     
-    func willLeave() {
-        
+    private func fetchData() {
+        dataService.fetchData { result in
+            switch result {
+            case let .success(data):
+                tryToPresentViewModel(from: data)
+            case .failure(_):
+                presenter?.presentError()
+            }
+        }
+    }
+    
+    func tryToPresentViewModel(from data: Data) {
+        do {
+            let viewModel = try getViewModel(from: data)
+            presenter?.present(viewModel: viewModel)
+        } catch {
+            debugPrint(error.localizedDescription)
+            presenter?.presentError()
+        }
+    }
+    
+    func getViewModel(from data: Data) throws -> QuizViewModel {
+        do {
+            let viewModel = try JSONDecoder().decode(QuizViewModel.self, from: data)
+            return viewModel
+        } catch {
+            throw CustomDecodeError.NonCompatibleStruct
+        }
     }
 }
+

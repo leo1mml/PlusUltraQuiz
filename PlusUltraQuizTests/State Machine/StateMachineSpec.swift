@@ -42,9 +42,6 @@ class StateMachineSpec: QuickSpec {
                     sut?.enter(state: secondState)
                 }
                 context("when the next state is different from the current one") {
-                    it("has to call will leave from previous state") {
-                        expect(initialState.hasCalledWillLeave).to(beTruthy())
-                    }
                     it("has to call didEnter from the current state") {
                         let state = secondState as? FakeFetchingState
                         expect(state).toNot(beNil())
@@ -59,10 +56,6 @@ class StateMachineSpec: QuickSpec {
                         secondState = FakeState()
                         sut = StateMachine(initialState: initialState)
                         sut?.enter(state: secondState)
-                    }
-                    
-                    it("has to not call willLeave from the previous state") {
-                        expect(initialState.hasCalledWillLeave).toNot(beTruthy())
                     }
                     
                     it("has to not call didEnter from the next state") {

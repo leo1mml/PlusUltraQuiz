@@ -8,6 +8,7 @@
 
 import Foundation
 
-protocol QuizPresenter {
-    
+protocol QuizPresenter: AnyObject {
+    func present(viewModel: QuizViewModel)
+    func presentError()
 }

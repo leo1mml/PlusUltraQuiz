@@ -21,7 +21,7 @@ final class FetchingStateSpec: QuickSpec {
                 var fakeDataService: FakeDataService?
                 beforeEach {
                     fakeDataService = FakeDataService()
-                    sut = FetchingState(dataService: fakeDataService!)
+                    sut = FetchingState(dataService: fakeDataService!, presenter: FakeQuizPresenter())
                 }
                 
                 it("has to call fetchData") {
@@ -33,9 +33,9 @@ final class FetchingStateSpec: QuickSpec {
             
             context("when the data is fetched successfully") {
                 it("has to deliver the data through a handler") {
-                    let presentationLogic: QuizPresenter
-                    sut = FetchingState(dataService: FakeDataService())
-                    
+                    let presenter = FakeQuizPresenter()
+                    sut = FetchingState(dataService: FakeDataService(), presenter: presenter)
+                    expect(presenter.hasCalledPresentViewModel).toEventually(beTruthy())
                 }
             }
         }

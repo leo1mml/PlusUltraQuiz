@@ -10,5 +10,4 @@ import Foundation
 
 protocol State {
     func didEnter()
-    func willLeave()
 }

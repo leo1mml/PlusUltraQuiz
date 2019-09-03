@@ -10,10 +10,14 @@ import Foundation
 @testable import PlusUltraQuiz
 
 class FakeDataService: DataService {
+    
     var url: URL = URL(string: "asdfasd")!
     var hasCalledFetchData = false
     
-    func fetchData() {
+    func fetchData(handler: (Result<Data, URLError>) -> Void) {
         hasCalledFetchData = true
+        let path = Bundle.main.url(forResource: "JavaKeywords", withExtension: "json")!
+        let data = try! Data(contentsOf: path, options: .mappedIfSafe)
+        handler(.success(data))
     }
 }

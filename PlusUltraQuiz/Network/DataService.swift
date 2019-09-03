@@ -10,5 +10,5 @@ import Foundation
 
 protocol DataService {
     var url: URL { get }
-    func fetchData()
+    func fetchData(handler: (Result<Data, URLError>) -> Void)
 }
