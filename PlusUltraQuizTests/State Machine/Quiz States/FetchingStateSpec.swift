@@ -29,15 +29,42 @@ final class FetchingStateSpec: QuickSpec {
                     expect(fakeDataService).toNot(beNil())
                     expect(fakeDataService?.hasCalledFetchData).to(beTruthy())
                 }
-            }
-            
-            context("when the data is fetched successfully") {
-                it("has to deliver the data through a handler") {
-                    let presenter = FakeQuizPresenter()
-                    sut = FetchingState(dataService: FakeDataService(), presenter: presenter)
-                    expect(presenter.hasCalledPresentViewModel).toEventually(beTruthy())
+                
+                context("when fetching data") {
+                    var presenter: QuizPresenter?
+                    beforeEach {
+                        presenter = FakeQuizPresenter()
+                    }
+                    context("when the data is fetched successfully") {
+                        it("has to deliver the data through a handler") {
+                            sut = FetchingState(dataService: FakeDataService(), presenter: presenter!)
+                            sut?.didEnter()
+                            let presenter = presenter as! FakeQuizPresenter
+                            expect(presenter.hasCalledPresentViewModel).toEventually(beTruthy())
+                        }
+                    }
+                    
+                    context("when the data is not fetched successfully") {
+                        it("has to send error presentation handler") {
+                            sut = FetchingState(dataService: FailingDataService(), presenter: presenter!)
+                            sut?.didEnter()
+                            let presenter = presenter as! FakeQuizPresenter
+                            expect(presenter.hasCalledPresentError).toEventually(beTruthy())
+                        }
+                    }
+                    
+                    context("when the data is invalid") {
+                        it("has to send error presentation handler") {
+                            sut = FetchingState(dataService: InvalidDataDataService(), presenter: presenter!)
+                            sut?.didEnter()
+                            let presenter = presenter as! FakeQuizPresenter
+                            expect(presenter.hasCalledPresentError).toEventually(beTruthy())
+                        }
+                    }
                 }
             }
+            
+            
         }
     }
 }

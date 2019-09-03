@@ -31,6 +31,8 @@
 		8AFFA682231DDD63000642DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8AFFA681231DDD63000642DB /* Assets.xcassets */; };
 		8AFFA685231DDD63000642DB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8AFFA683231DDD63000642DB /* LaunchScreen.storyboard */; };
 		8AFFA690231DDD63000642DB /* StateMachineSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFFA68F231DDD63000642DB /* StateMachineSpec.swift */; };
+		8F1ECA79231EACD600ED6CF1 /* FailingDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1ECA78231EACD600ED6CF1 /* FailingDataService.swift */; };
+		8F1ECA7B231EAFBD00ED6CF1 /* InvalidDataDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1ECA7A231EAFBD00ED6CF1 /* InvalidDataDataService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +85,8 @@
 		8AFFA68B231DDD63000642DB /* PlusUltraQuizTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PlusUltraQuizTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AFFA68F231DDD63000642DB /* StateMachineSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateMachineSpec.swift; sourceTree = "<group>"; };
 		8AFFA691231DDD63000642DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8F1ECA78231EACD600ED6CF1 /* FailingDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FailingDataService.swift; sourceTree = "<group>"; };
+		8F1ECA7A231EAFBD00ED6CF1 /* InvalidDataDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvalidDataDataService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,6 +176,8 @@
 			isa = PBXGroup;
 			children = (
 				8A118F5A231DFD9400F211B6 /* FakeDataService.swift */,
+				8F1ECA78231EACD600ED6CF1 /* FailingDataService.swift */,
+				8F1ECA7A231EAFBD00ED6CF1 /* InvalidDataDataService.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -383,6 +389,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F1ECA79231EACD600ED6CF1 /* FailingDataService.swift in Sources */,
+				8F1ECA7B231EAFBD00ED6CF1 /* InvalidDataDataService.swift in Sources */,
 				8A118F4B231DF7A200F211B6 /* QuizControllerTests.swift in Sources */,
 				8A118F5E231E084B00F211B6 /* FetchingStateSpec.swift in Sources */,
 				8AFFA690231DDD63000642DB /* StateMachineSpec.swift in Sources */,

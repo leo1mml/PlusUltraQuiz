@@ -11,7 +11,7 @@ import Foundation
 final class FetchingState: State {
     
     private var dataService: DataService
-    private var presenter: QuizPresenter?
+    private var presenter: QuizPresenter
     
     init(dataService: DataService, presenter: QuizPresenter) {
         self.dataService = dataService
@@ -28,7 +28,7 @@ final class FetchingState: State {
             case let .success(data):
                 tryToPresentViewModel(from: data)
             case .failure(_):
-                presenter?.presentError()
+                presenter.presentError()
             }
         }
     }
@@ -36,20 +36,18 @@ final class FetchingState: State {
     func tryToPresentViewModel(from data: Data) {
         do {
             let viewModel = try getViewModel(from: data)
-            presenter?.present(viewModel: viewModel)
+            presenter.present(viewModel: viewModel)
         } catch {
             debugPrint(error.localizedDescription)
-            presenter?.presentError()
+            presenter.presentError()
         }
     }
     
     func getViewModel(from data: Data) throws -> QuizViewModel {
-        do {
-            let viewModel = try JSONDecoder().decode(QuizViewModel.self, from: data)
+        if let viewModel = try? JSONDecoder().decode(QuizViewModel.self, from: data) {
             return viewModel
-        } catch {
-            throw CustomDecodeError.NonCompatibleStruct
         }
+        throw CustomDecodeError.NonCompatibleStruct
     }
 }
 
