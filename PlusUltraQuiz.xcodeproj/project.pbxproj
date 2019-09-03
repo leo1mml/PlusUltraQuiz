@@ -91,13 +91,13 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		8A118F42231DEE2A00F211B6 /* StateMachine */ = {
+		8A118F42231DEE2A00F211B6 /* State Machine */ = {
 			isa = PBXGroup;
 			children = (
 				8A118F43231DEEF500F211B6 /* StateMachine.swift */,
 				8A118F40231DEDC300F211B6 /* State.swift */,
 			);
-			path = StateMachine;
+			path = "State Machine";
 			sourceTree = "<group>";
 		};
 		8A118F47231DF4CE00F211B6 /* TestDoubles */ = {
@@ -114,6 +114,14 @@
 				8A118F45231DF38B00F211B6 /* FakeState.swift */,
 			);
 			path = States;
+			sourceTree = "<group>";
+		};
+		8A118F49231DF65600F211B6 /* State Machine */ = {
+			isa = PBXGroup;
+			children = (
+				8AFFA68F231DDD63000642DB /* PlusUltraQuizTests.swift */,
+			);
+			path = "State Machine";
 			sourceTree = "<group>";
 		};
 		8AFFA66E231DDD61000642DB = {
@@ -138,7 +146,7 @@
 		8AFFA679231DDD61000642DB /* PlusUltraQuiz */ = {
 			isa = PBXGroup;
 			children = (
-				8A118F42231DEE2A00F211B6 /* StateMachine */,
+				8A118F42231DEE2A00F211B6 /* State Machine */,
 				8AFFA67A231DDD61000642DB /* AppDelegate.swift */,
 				8AFFA67C231DDD61000642DB /* ViewController.swift */,
 				8AFFA681231DDD63000642DB /* Assets.xcassets */,
@@ -151,8 +159,8 @@
 		8AFFA68E231DDD63000642DB /* PlusUltraQuizTests */ = {
 			isa = PBXGroup;
 			children = (
+				8A118F49231DF65600F211B6 /* State Machine */,
 				8A118F47231DF4CE00F211B6 /* TestDoubles */,
-				8AFFA68F231DDD63000642DB /* PlusUltraQuizTests.swift */,
 				8AFFA691231DDD63000642DB /* Info.plist */,
 			);
 			path = PlusUltraQuizTests;
