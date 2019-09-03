@@ -38,7 +38,6 @@ final class FetchingState: State {
             let viewModel = try getViewModel(from: data)
             presenter.present(viewModel: viewModel)
         } catch {
-            debugPrint(error.localizedDescription)
             presenter.presentError()
         }
     }

@@ -15,4 +15,7 @@ enum CustomDecodeError: String, Error, CustomStringConvertible {
     var description: String {
         return self.rawValue
     }
+    var localizedDescription: String {
+        return self.rawValue
+    }
 }
