@@ -25,6 +25,7 @@
 		8A118F6C231E269C00F211B6 /* CustomDecodeError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A118F6B231E269C00F211B6 /* CustomDecodeError.swift */; };
 		8A118F71231E301F00F211B6 /* JavaKeywords.json in Resources */ = {isa = PBXBuildFile; fileRef = 8A118F70231E301F00F211B6 /* JavaKeywords.json */; };
 		8A118F73231E309B00F211B6 /* FakeDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A118F5A231DFD9400F211B6 /* FakeDataService.swift */; };
+		8A118F79231F2F3300F211B6 /* LoadingViewSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A118F78231F2F3300F211B6 /* LoadingViewSpec.swift */; };
 		8AFFA67B231DDD61000642DB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFFA67A231DDD61000642DB /* AppDelegate.swift */; };
 		8AFFA67D231DDD61000642DB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFFA67C231DDD61000642DB /* ViewController.swift */; };
 		8AFFA682231DDD63000642DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8AFFA681231DDD63000642DB /* Assets.xcassets */; };
@@ -97,6 +98,7 @@
 		8A118F69231E1F8900F211B6 /* QuizViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewModel.swift; sourceTree = "<group>"; };
 		8A118F6B231E269C00F211B6 /* CustomDecodeError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDecodeError.swift; sourceTree = "<group>"; };
 		8A118F70231E301F00F211B6 /* JavaKeywords.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = JavaKeywords.json; sourceTree = "<group>"; };
+		8A118F78231F2F3300F211B6 /* LoadingViewSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewSpec.swift; sourceTree = "<group>"; };
 		8AFFA677231DDD61000642DB /* PlusUltraQuiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlusUltraQuiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AFFA67A231DDD61000642DB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8AFFA67C231DDD61000642DB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -258,6 +260,21 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		8A118F76231F2BF400F211B6 /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Theme;
+			sourceTree = "<group>";
+		};
+		8A118F77231F2F2100F211B6 /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				8A118F78231F2F3300F211B6 /* LoadingViewSpec.swift */,
+			);
+			path = Subviews;
+			sourceTree = "<group>";
+		};
 		8AFFA66E231DDD61000642DB = {
 			isa = PBXGroup;
 			children = (
@@ -280,6 +297,7 @@
 		8AFFA679231DDD61000642DB /* PlusUltraQuiz */ = {
 			isa = PBXGroup;
 			children = (
+				8A118F76231F2BF400F211B6 /* Theme */,
 				8F9BEE1C231F023C00E0F401 /* Utils */,
 				8F9BEE13231F016800E0F401 /* Frameworks */,
 				8F1ECA7D231EC10100ED6CF1 /* Errors */,
@@ -336,6 +354,7 @@
 		8F1ECA84231EC3BD00ED6CF1 /* Quiz */ = {
 			isa = PBXGroup;
 			children = (
+				8A118F77231F2F2100F211B6 /* Subviews */,
 				8F1ECA82231EC3B600ED6CF1 /* QuizPresenterImpSpec.swift */,
 			);
 			path = Quiz;
@@ -505,6 +524,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A118F79231F2F3300F211B6 /* LoadingViewSpec.swift in Sources */,
 				8F1ECA79231EACD600ED6CF1 /* FailingDataService.swift in Sources */,
 				8F1ECA7B231EAFBD00ED6CF1 /* InvalidDataDataService.swift in Sources */,
 				8A118F4B231DF7A200F211B6 /* QuizControllerTests.swift in Sources */,
