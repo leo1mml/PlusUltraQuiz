@@ -36,6 +36,8 @@
 		8F1ECA80231EC13200ED6CF1 /* CustomDecodeErrorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1ECA7F231EC13200ED6CF1 /* CustomDecodeErrorSpec.swift */; };
 		8F1ECA83231EC3B600ED6CF1 /* QuizPresenterImpSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1ECA82231EC3B600ED6CF1 /* QuizPresenterImpSpec.swift */; };
 		8F1ECA86231EC4E500ED6CF1 /* QuizPresenterImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1ECA85231EC4E500ED6CF1 /* QuizPresenterImp.swift */; };
+		8F9BEE16231F018D00E0F401 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F9BEE14231F018000E0F401 /* SnapKit.framework */; };
+		8F9BEE17231F018D00E0F401 /* SnapKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8F9BEE14231F018000E0F401 /* SnapKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +60,17 @@
 				8A118F3A231DEBE500F211B6 /* Nimble.framework in CopyFiles */,
 				8A118F3B231DEBE500F211B6 /* Quick.framework in CopyFiles */,
 			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8F9BEE18231F018D00E0F401 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				8F9BEE17231F018D00E0F401 /* SnapKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -93,6 +106,7 @@
 		8F1ECA7F231EC13200ED6CF1 /* CustomDecodeErrorSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDecodeErrorSpec.swift; sourceTree = "<group>"; };
 		8F1ECA82231EC3B600ED6CF1 /* QuizPresenterImpSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizPresenterImpSpec.swift; sourceTree = "<group>"; };
 		8F1ECA85231EC4E500ED6CF1 /* QuizPresenterImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizPresenterImp.swift; sourceTree = "<group>"; };
+		8F9BEE14231F018000E0F401 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +114,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F9BEE16231F018D00E0F401 /* SnapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,6 +268,7 @@
 		8AFFA679231DDD61000642DB /* PlusUltraQuiz */ = {
 			isa = PBXGroup;
 			children = (
+				8F9BEE13231F016800E0F401 /* Frameworks */,
 				8F1ECA7D231EC10100ED6CF1 /* Errors */,
 				8A118F61231E183400F211B6 /* Scenes */,
 				8A118F54231DFB9200F211B6 /* Network */,
@@ -311,6 +327,14 @@
 			path = Quiz;
 			sourceTree = "<group>";
 		};
+		8F9BEE13231F016800E0F401 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8F9BEE14231F018000E0F401 /* SnapKit.framework */,
+			);
+			path = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -321,6 +345,7 @@
 				8AFFA673231DDD61000642DB /* Sources */,
 				8AFFA674231DDD61000642DB /* Frameworks */,
 				8AFFA675231DDD61000642DB /* Resources */,
+				8F9BEE18231F018D00E0F401 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);

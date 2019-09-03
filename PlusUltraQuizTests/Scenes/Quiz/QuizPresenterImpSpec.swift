@@ -13,7 +13,7 @@ import Nimble
 final class QuizPresenterImpSpec: QuickSpec {
     override func spec() {
         describe("QuizPresenterImp") {
-            var _: QuizPresenterImp?
+            let _ = QuizPresenterImp()
             
         }
     }
