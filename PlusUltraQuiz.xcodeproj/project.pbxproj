@@ -38,6 +38,11 @@
 		8F1ECA86231EC4E500ED6CF1 /* QuizPresenterImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1ECA85231EC4E500ED6CF1 /* QuizPresenterImp.swift */; };
 		8F9BEE16231F018D00E0F401 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F9BEE14231F018000E0F401 /* SnapKit.framework */; };
 		8F9BEE17231F018D00E0F401 /* SnapKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8F9BEE14231F018000E0F401 /* SnapKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		8F9BEE1B231F023600E0F401 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F9BEE1A231F023600E0F401 /* LoadingView.swift */; };
+		8F9BEE1E231F025800E0F401 /* ViewCoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F9BEE1D231F025800E0F401 /* ViewCoding.swift */; };
+		8F9BEE21231F02BE00E0F401 /* ViewCodingStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F9BEE20231F02BE00E0F401 /* ViewCodingStub.swift */; };
+		8F9BEE24231F03F800E0F401 /* ViewCodingSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F9BEE23231F03F800E0F401 /* ViewCodingSpec.swift */; };
+		8F9BEE26231F058900E0F401 /* ViewCodingPartialStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F9BEE25231F058900E0F401 /* ViewCodingPartialStub.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,6 +112,11 @@
 		8F1ECA82231EC3B600ED6CF1 /* QuizPresenterImpSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizPresenterImpSpec.swift; sourceTree = "<group>"; };
 		8F1ECA85231EC4E500ED6CF1 /* QuizPresenterImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizPresenterImp.swift; sourceTree = "<group>"; };
 		8F9BEE14231F018000E0F401 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = SOURCE_ROOT; };
+		8F9BEE1A231F023600E0F401 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		8F9BEE1D231F025800E0F401 /* ViewCoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCoding.swift; sourceTree = "<group>"; };
+		8F9BEE20231F02BE00E0F401 /* ViewCodingStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCodingStub.swift; sourceTree = "<group>"; };
+		8F9BEE23231F03F800E0F401 /* ViewCodingSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCodingSpec.swift; sourceTree = "<group>"; };
+		8F9BEE25231F058900E0F401 /* ViewCodingPartialStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCodingPartialStub.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +162,7 @@
 		8A118F47231DF4CE00F211B6 /* TestDoubles */ = {
 			isa = PBXGroup;
 			children = (
+				8F9BEE22231F03E900E0F401 /* Utils */,
 				8F1ECA7E231EC11500ED6CF1 /* Errors */,
 				8A118F66231E1CB700F211B6 /* Presenters */,
 				8A118F59231DFD8800F211B6 /* Network */,
@@ -223,6 +234,7 @@
 		8A118F63231E193800F211B6 /* Quiz */ = {
 			isa = PBXGroup;
 			children = (
+				8F9BEE19231F021400E0F401 /* Subviews */,
 				8A118F64231E195A00F211B6 /* QuizPresenter.swift */,
 				8A118F69231E1F8900F211B6 /* QuizViewModel.swift */,
 				8F1ECA85231EC4E500ED6CF1 /* QuizPresenterImp.swift */,
@@ -268,6 +280,7 @@
 		8AFFA679231DDD61000642DB /* PlusUltraQuiz */ = {
 			isa = PBXGroup;
 			children = (
+				8F9BEE1C231F023C00E0F401 /* Utils */,
 				8F9BEE13231F016800E0F401 /* Frameworks */,
 				8F1ECA7D231EC10100ED6CF1 /* Errors */,
 				8A118F61231E183400F211B6 /* Scenes */,
@@ -285,6 +298,7 @@
 		8AFFA68E231DDD63000642DB /* PlusUltraQuizTests */ = {
 			isa = PBXGroup;
 			children = (
+				8F9BEE1F231F02AE00E0F401 /* Utils */,
 				8F1ECA81231EC3A300ED6CF1 /* Scenes */,
 				8A118F6D231E2CD100F211B6 /* Resources */,
 				8A118F49231DF65600F211B6 /* State Machine */,
@@ -333,6 +347,39 @@
 				8F9BEE14231F018000E0F401 /* SnapKit.framework */,
 			);
 			path = Frameworks;
+			sourceTree = "<group>";
+		};
+		8F9BEE19231F021400E0F401 /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				8F9BEE1A231F023600E0F401 /* LoadingView.swift */,
+			);
+			path = Subviews;
+			sourceTree = "<group>";
+		};
+		8F9BEE1C231F023C00E0F401 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				8F9BEE1D231F025800E0F401 /* ViewCoding.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		8F9BEE1F231F02AE00E0F401 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				8F9BEE23231F03F800E0F401 /* ViewCodingSpec.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		8F9BEE22231F03E900E0F401 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				8F9BEE20231F02BE00E0F401 /* ViewCodingStub.swift */,
+				8F9BEE25231F058900E0F401 /* ViewCodingPartialStub.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -442,12 +489,14 @@
 				8F1ECA86231EC4E500ED6CF1 /* QuizPresenterImp.swift in Sources */,
 				8A118F65231E195A00F211B6 /* QuizPresenter.swift in Sources */,
 				8AFFA67D231DDD61000642DB /* ViewController.swift in Sources */,
+				8F9BEE1B231F023600E0F401 /* LoadingView.swift in Sources */,
 				8A118F58231DFC8500F211B6 /* DataService.swift in Sources */,
 				8A118F6C231E269C00F211B6 /* CustomDecodeError.swift in Sources */,
 				8A118F6A231E1F8900F211B6 /* QuizViewModel.swift in Sources */,
 				8A118F51231DF8BC00F211B6 /* FetchingState.swift in Sources */,
 				8AFFA67B231DDD61000642DB /* AppDelegate.swift in Sources */,
 				8A118F41231DEDC300F211B6 /* State.swift in Sources */,
+				8F9BEE1E231F025800E0F401 /* ViewCoding.swift in Sources */,
 				8A118F44231DEEF500F211B6 /* StateMachine.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -460,10 +509,13 @@
 				8F1ECA7B231EAFBD00ED6CF1 /* InvalidDataDataService.swift in Sources */,
 				8A118F4B231DF7A200F211B6 /* QuizControllerTests.swift in Sources */,
 				8A118F5E231E084B00F211B6 /* FetchingStateSpec.swift in Sources */,
+				8F9BEE21231F02BE00E0F401 /* ViewCodingStub.swift in Sources */,
 				8F1ECA80231EC13200ED6CF1 /* CustomDecodeErrorSpec.swift in Sources */,
 				8AFFA690231DDD63000642DB /* StateMachineSpec.swift in Sources */,
 				8A118F53231DFA3C00F211B6 /* FakeFetchingState.swift in Sources */,
+				8F9BEE26231F058900E0F401 /* ViewCodingPartialStub.swift in Sources */,
 				8A118F68231E1CD100F211B6 /* FakeQuizPresenter.swift in Sources */,
+				8F9BEE24231F03F800E0F401 /* ViewCodingSpec.swift in Sources */,
 				8F1ECA83231EC3B600ED6CF1 /* QuizPresenterImpSpec.swift in Sources */,
 				8A118F73231E309B00F211B6 /* FakeDataService.swift in Sources */,
 				8A118F46231DF38B00F211B6 /* FakeState.swift in Sources */,
