@@ -11,6 +11,9 @@
 		8A118F38231DEB9200F211B6 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A118F33231DEB5500F211B6 /* Quick.framework */; };
 		8A118F3A231DEBE500F211B6 /* Nimble.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8A118F34231DEB5500F211B6 /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8A118F3B231DEBE500F211B6 /* Quick.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8A118F33231DEB5500F211B6 /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		8A118F41231DEDC300F211B6 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A118F40231DEDC300F211B6 /* State.swift */; };
+		8A118F44231DEEF500F211B6 /* StateMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A118F43231DEEF500F211B6 /* StateMachine.swift */; };
+		8A118F46231DF38B00F211B6 /* FakeState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A118F45231DF38B00F211B6 /* FakeState.swift */; };
 		8AFFA67B231DDD61000642DB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFFA67A231DDD61000642DB /* AppDelegate.swift */; };
 		8AFFA67D231DDD61000642DB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFFA67C231DDD61000642DB /* ViewController.swift */; };
 		8AFFA682231DDD63000642DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8AFFA681231DDD63000642DB /* Assets.xcassets */; };
@@ -45,6 +48,9 @@
 /* Begin PBXFileReference section */
 		8A118F33231DEB5500F211B6 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
 		8A118F34231DEB5500F211B6 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
+		8A118F40231DEDC300F211B6 /* State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
+		8A118F43231DEEF500F211B6 /* StateMachine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StateMachine.swift; sourceTree = "<group>"; };
+		8A118F45231DF38B00F211B6 /* FakeState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FakeState.swift; sourceTree = "<group>"; };
 		8AFFA677231DDD61000642DB /* PlusUltraQuiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlusUltraQuiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AFFA67A231DDD61000642DB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8AFFA67C231DDD61000642DB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -85,6 +91,31 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		8A118F42231DEE2A00F211B6 /* StateMachine */ = {
+			isa = PBXGroup;
+			children = (
+				8A118F43231DEEF500F211B6 /* StateMachine.swift */,
+				8A118F40231DEDC300F211B6 /* State.swift */,
+			);
+			path = StateMachine;
+			sourceTree = "<group>";
+		};
+		8A118F47231DF4CE00F211B6 /* TestDoubles */ = {
+			isa = PBXGroup;
+			children = (
+				8A118F48231DF4D900F211B6 /* States */,
+			);
+			path = TestDoubles;
+			sourceTree = "<group>";
+		};
+		8A118F48231DF4D900F211B6 /* States */ = {
+			isa = PBXGroup;
+			children = (
+				8A118F45231DF38B00F211B6 /* FakeState.swift */,
+			);
+			path = States;
+			sourceTree = "<group>";
+		};
 		8AFFA66E231DDD61000642DB = {
 			isa = PBXGroup;
 			children = (
@@ -107,6 +138,7 @@
 		8AFFA679231DDD61000642DB /* PlusUltraQuiz */ = {
 			isa = PBXGroup;
 			children = (
+				8A118F42231DEE2A00F211B6 /* StateMachine */,
 				8AFFA67A231DDD61000642DB /* AppDelegate.swift */,
 				8AFFA67C231DDD61000642DB /* ViewController.swift */,
 				8AFFA681231DDD63000642DB /* Assets.xcassets */,
@@ -119,6 +151,7 @@
 		8AFFA68E231DDD63000642DB /* PlusUltraQuizTests */ = {
 			isa = PBXGroup;
 			children = (
+				8A118F47231DF4CE00F211B6 /* TestDoubles */,
 				8AFFA68F231DDD63000642DB /* PlusUltraQuizTests.swift */,
 				8AFFA691231DDD63000642DB /* Info.plist */,
 			);
@@ -228,6 +261,8 @@
 			files = (
 				8AFFA67D231DDD61000642DB /* ViewController.swift in Sources */,
 				8AFFA67B231DDD61000642DB /* AppDelegate.swift in Sources */,
+				8A118F41231DEDC300F211B6 /* State.swift in Sources */,
+				8A118F44231DEEF500F211B6 /* StateMachine.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -236,6 +271,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8AFFA690231DDD63000642DB /* PlusUltraQuizTests.swift in Sources */,
+				8A118F46231DF38B00F211B6 /* FakeState.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
