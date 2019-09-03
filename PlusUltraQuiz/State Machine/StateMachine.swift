@@ -13,12 +13,18 @@ final class StateMachine {
     private(set) var currentState: State
     
     init(initialState: State) {
-        currentState = initialState
-        enter(state: currentState)
+        self.currentState = initialState
+        currentState.didEnter()
     }
     
     func enter(state: State) {
-        currentState.willLeave()
-        state.didEnter()
+        if canEnter(state) {
+            currentState.willLeave()
+            state.didEnter()
+        }
+    }
+    
+    private func canEnter(_ nextState: State) -> Bool {
+        return type(of: nextState).self != type(of: currentState).self
     }
 }

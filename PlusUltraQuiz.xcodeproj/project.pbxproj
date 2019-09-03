@@ -14,11 +14,18 @@
 		8A118F41231DEDC300F211B6 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A118F40231DEDC300F211B6 /* State.swift */; };
 		8A118F44231DEEF500F211B6 /* StateMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A118F43231DEEF500F211B6 /* StateMachine.swift */; };
 		8A118F46231DF38B00F211B6 /* FakeState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A118F45231DF38B00F211B6 /* FakeState.swift */; };
+		8A118F4B231DF7A200F211B6 /* QuizControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A118F4A231DF7A200F211B6 /* QuizControllerTests.swift */; };
+		8A118F51231DF8BC00F211B6 /* FetchingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A118F50231DF8BC00F211B6 /* FetchingState.swift */; };
+		8A118F53231DFA3C00F211B6 /* FakeFetchingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A118F52231DFA3C00F211B6 /* FakeFetchingState.swift */; };
+		8A118F58231DFC8500F211B6 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A118F57231DFC8500F211B6 /* DataService.swift */; };
+		8A118F5B231DFD9400F211B6 /* FakeDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A118F5A231DFD9400F211B6 /* FakeDataService.swift */; };
+		8A118F5E231E084B00F211B6 /* FetchingStateSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A118F5D231E084B00F211B6 /* FetchingStateSpec.swift */; };
+		8A118F65231E195A00F211B6 /* QuizPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A118F64231E195A00F211B6 /* QuizPresenter.swift */; };
 		8AFFA67B231DDD61000642DB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFFA67A231DDD61000642DB /* AppDelegate.swift */; };
 		8AFFA67D231DDD61000642DB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFFA67C231DDD61000642DB /* ViewController.swift */; };
 		8AFFA682231DDD63000642DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8AFFA681231DDD63000642DB /* Assets.xcassets */; };
 		8AFFA685231DDD63000642DB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8AFFA683231DDD63000642DB /* LaunchScreen.storyboard */; };
-		8AFFA690231DDD63000642DB /* PlusUltraQuizTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFFA68F231DDD63000642DB /* PlusUltraQuizTests.swift */; };
+		8AFFA690231DDD63000642DB /* StateMachineSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFFA68F231DDD63000642DB /* StateMachineSpec.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +58,13 @@
 		8A118F40231DEDC300F211B6 /* State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
 		8A118F43231DEEF500F211B6 /* StateMachine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StateMachine.swift; sourceTree = "<group>"; };
 		8A118F45231DF38B00F211B6 /* FakeState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FakeState.swift; sourceTree = "<group>"; };
+		8A118F4A231DF7A200F211B6 /* QuizControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizControllerTests.swift; sourceTree = "<group>"; };
+		8A118F50231DF8BC00F211B6 /* FetchingState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchingState.swift; sourceTree = "<group>"; };
+		8A118F52231DFA3C00F211B6 /* FakeFetchingState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeFetchingState.swift; sourceTree = "<group>"; };
+		8A118F57231DFC8500F211B6 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		8A118F5A231DFD9400F211B6 /* FakeDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeDataService.swift; sourceTree = "<group>"; };
+		8A118F5D231E084B00F211B6 /* FetchingStateSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchingStateSpec.swift; sourceTree = "<group>"; };
+		8A118F64231E195A00F211B6 /* QuizPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizPresenter.swift; sourceTree = "<group>"; };
 		8AFFA677231DDD61000642DB /* PlusUltraQuiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlusUltraQuiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AFFA67A231DDD61000642DB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8AFFA67C231DDD61000642DB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -58,7 +72,7 @@
 		8AFFA684231DDD63000642DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8AFFA686231DDD63000642DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8AFFA68B231DDD63000642DB /* PlusUltraQuizTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PlusUltraQuizTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		8AFFA68F231DDD63000642DB /* PlusUltraQuizTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlusUltraQuizTests.swift; sourceTree = "<group>"; };
+		8AFFA68F231DDD63000642DB /* StateMachineSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateMachineSpec.swift; sourceTree = "<group>"; };
 		8AFFA691231DDD63000642DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -94,6 +108,7 @@
 		8A118F42231DEE2A00F211B6 /* State Machine */ = {
 			isa = PBXGroup;
 			children = (
+				8A118F4F231DF8A100F211B6 /* Quiz States */,
 				8A118F43231DEEF500F211B6 /* StateMachine.swift */,
 				8A118F40231DEDC300F211B6 /* State.swift */,
 			);
@@ -103,6 +118,7 @@
 		8A118F47231DF4CE00F211B6 /* TestDoubles */ = {
 			isa = PBXGroup;
 			children = (
+				8A118F59231DFD8800F211B6 /* Network */,
 				8A118F48231DF4D900F211B6 /* States */,
 			);
 			path = TestDoubles;
@@ -112,6 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				8A118F45231DF38B00F211B6 /* FakeState.swift */,
+				8A118F52231DFA3C00F211B6 /* FakeFetchingState.swift */,
 			);
 			path = States;
 			sourceTree = "<group>";
@@ -119,9 +136,58 @@
 		8A118F49231DF65600F211B6 /* State Machine */ = {
 			isa = PBXGroup;
 			children = (
-				8AFFA68F231DDD63000642DB /* PlusUltraQuizTests.swift */,
+				8A118F5C231E082B00F211B6 /* Quiz States */,
+				8AFFA68F231DDD63000642DB /* StateMachineSpec.swift */,
 			);
 			path = "State Machine";
+			sourceTree = "<group>";
+		};
+		8A118F4F231DF8A100F211B6 /* Quiz States */ = {
+			isa = PBXGroup;
+			children = (
+				8A118F50231DF8BC00F211B6 /* FetchingState.swift */,
+			);
+			path = "Quiz States";
+			sourceTree = "<group>";
+		};
+		8A118F54231DFB9200F211B6 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				8A118F57231DFC8500F211B6 /* DataService.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		8A118F59231DFD8800F211B6 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				8A118F5A231DFD9400F211B6 /* FakeDataService.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		8A118F5C231E082B00F211B6 /* Quiz States */ = {
+			isa = PBXGroup;
+			children = (
+				8A118F5D231E084B00F211B6 /* FetchingStateSpec.swift */,
+			);
+			path = "Quiz States";
+			sourceTree = "<group>";
+		};
+		8A118F61231E183400F211B6 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				8A118F63231E193800F211B6 /* Quiz */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		8A118F63231E193800F211B6 /* Quiz */ = {
+			isa = PBXGroup;
+			children = (
+				8A118F64231E195A00F211B6 /* QuizPresenter.swift */,
+			);
+			path = Quiz;
 			sourceTree = "<group>";
 		};
 		8AFFA66E231DDD61000642DB = {
@@ -146,6 +212,8 @@
 		8AFFA679231DDD61000642DB /* PlusUltraQuiz */ = {
 			isa = PBXGroup;
 			children = (
+				8A118F61231E183400F211B6 /* Scenes */,
+				8A118F54231DFB9200F211B6 /* Network */,
 				8A118F42231DEE2A00F211B6 /* State Machine */,
 				8AFFA67A231DDD61000642DB /* AppDelegate.swift */,
 				8AFFA67C231DDD61000642DB /* ViewController.swift */,
@@ -162,6 +230,7 @@
 				8A118F49231DF65600F211B6 /* State Machine */,
 				8A118F47231DF4CE00F211B6 /* TestDoubles */,
 				8AFFA691231DDD63000642DB /* Info.plist */,
+				8A118F4A231DF7A200F211B6 /* QuizControllerTests.swift */,
 			);
 			path = PlusUltraQuizTests;
 			sourceTree = "<group>";
@@ -267,7 +336,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A118F65231E195A00F211B6 /* QuizPresenter.swift in Sources */,
 				8AFFA67D231DDD61000642DB /* ViewController.swift in Sources */,
+				8A118F58231DFC8500F211B6 /* DataService.swift in Sources */,
+				8A118F51231DF8BC00F211B6 /* FetchingState.swift in Sources */,
 				8AFFA67B231DDD61000642DB /* AppDelegate.swift in Sources */,
 				8A118F41231DEDC300F211B6 /* State.swift in Sources */,
 				8A118F44231DEEF500F211B6 /* StateMachine.swift in Sources */,
@@ -278,7 +350,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8AFFA690231DDD63000642DB /* PlusUltraQuizTests.swift in Sources */,
+				8A118F5B231DFD9400F211B6 /* FakeDataService.swift in Sources */,
+				8A118F4B231DF7A200F211B6 /* QuizControllerTests.swift in Sources */,
+				8A118F5E231E084B00F211B6 /* FetchingStateSpec.swift in Sources */,
+				8AFFA690231DDD63000642DB /* StateMachineSpec.swift in Sources */,
+				8A118F53231DFA3C00F211B6 /* FakeFetchingState.swift in Sources */,
 				8A118F46231DF38B00F211B6 /* FakeState.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
