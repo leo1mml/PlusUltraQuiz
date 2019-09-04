@@ -17,8 +17,6 @@ class ViewController: UIViewController {
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        let presenter = QuizPresenterImp(viewController: self)
-        presenter.presentLoadingView()
     }
     
     init() {

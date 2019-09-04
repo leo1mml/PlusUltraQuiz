@@ -11,7 +11,7 @@ import Quick
 import Nimble
 @testable import PlusUltraQuiz
 
-class FakeQuizPresenter: QuizPresenter {
+class FakeQuizPresenter: QuizPresentationLogic {
     
     var hasCalledPresentViewModel = false
     var hasCalledPresentError = false

@@ -10,5 +10,5 @@ import Foundation
 
 protocol DataService {
     var url: URL { get }
-    func fetchData(handler: (Result<Data, URLError>) -> Void)
+    func fetchData(handler: @escaping (Result<Data, URLError>) -> Void)
 }

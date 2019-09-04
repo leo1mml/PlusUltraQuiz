@@ -31,7 +31,7 @@ final class FetchingStateSpec: QuickSpec {
                 }
                 
                 context("when fetching data") {
-                    var presenter: QuizPresenter?
+                    var presenter: QuizPresentationLogic?
                     beforeEach {
                         presenter = FakeQuizPresenter()
                     }

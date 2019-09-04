@@ -8,12 +8,7 @@
 
 import Foundation
 
-struct QuizViewModel: Decodable {
+struct QuizViewModel {
     var title: String
     var keywords: [String]
-    
-    enum CodingKeys: String, CodingKey {
-        case title = "question"
-        case keywords = "answer"
-    }
 }
