@@ -13,7 +13,6 @@ final class LoadingView: UIView {
     private var indicator: UIActivityIndicatorView = {
         let indicator = UIActivityIndicatorView()
         indicator.style = .white
-        indicator.transform = CGAffineTransform(scaleX: 2, y: 2)
         indicator.hidesWhenStopped = false
         return indicator
     }()
@@ -26,10 +25,9 @@ final class LoadingView: UIView {
         return label
     }()
     
-    init(frame: CGRect = .zero, alpha: CGFloat) {
+    override init(frame: CGRect = .zero) {
         super.init(frame: frame)
         setupViews()
-        self.alpha = alpha
     }
     
     @available(*, unavailable)
