@@ -13,12 +13,16 @@ final class LoadingView: UIView {
     private var indicator: UIActivityIndicatorView = {
         let indicator = UIActivityIndicatorView()
         indicator.style = .white
+        indicator.transform = CGAffineTransform(scaleX: 2, y: 2)
+        indicator.hidesWhenStopped = false
         return indicator
     }()
     
     private var loadingLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 16, weight: .bold)
+        label.textColor = .white
+        label.text = "Loading"
         return label
     }()
     
@@ -46,13 +50,17 @@ extension LoadingView: ViewCoding {
     func setupConstraints() {
         let stack = createVerticalStack()
         addSubview(stack)
-        stack.snp.makeConstraints { $0.edges.equalToSuperview() }
+        stack.snp.makeConstraints {
+            $0.left.right.bottom.equalToSuperview()
+            $0.top.equalToSuperview().inset(24)
+        }
     }
     
     private func createVerticalStack() -> UIStackView {
         let stack = UIStackView()
         stack.axis = .vertical
         stack.alignment = .center
+        stack.distribution = .fillProportionally
         [indicator, loadingLabel].forEach({stack.addArrangedSubview($0)})
         return stack
     }

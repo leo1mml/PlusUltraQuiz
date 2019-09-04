@@ -26,6 +26,10 @@
 		8A118F71231E301F00F211B6 /* JavaKeywords.json in Resources */ = {isa = PBXBuildFile; fileRef = 8A118F70231E301F00F211B6 /* JavaKeywords.json */; };
 		8A118F73231E309B00F211B6 /* FakeDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A118F5A231DFD9400F211B6 /* FakeDataService.swift */; };
 		8A118F79231F2F3300F211B6 /* LoadingViewSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A118F78231F2F3300F211B6 /* LoadingViewSpec.swift */; };
+		8AE33DC4231F437C00B15EE8 /* FBSnapshotTestCase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AE33DC2231F437B00B15EE8 /* FBSnapshotTestCase.framework */; };
+		8AE33DC5231F437C00B15EE8 /* Nimble_Snapshots.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AE33DC3231F437B00B15EE8 /* Nimble_Snapshots.framework */; };
+		8AE33DC6231F438B00B15EE8 /* FBSnapshotTestCase.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8AE33DC2231F437B00B15EE8 /* FBSnapshotTestCase.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		8AE33DC7231F438B00B15EE8 /* Nimble_Snapshots.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8AE33DC3231F437B00B15EE8 /* Nimble_Snapshots.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8AFFA67B231DDD61000642DB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFFA67A231DDD61000642DB /* AppDelegate.swift */; };
 		8AFFA67D231DDD61000642DB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFFA67C231DDD61000642DB /* ViewController.swift */; };
 		8AFFA682231DDD63000642DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8AFFA681231DDD63000642DB /* Assets.xcassets */; };
@@ -63,6 +67,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				8AE33DC6231F438B00B15EE8 /* FBSnapshotTestCase.framework in CopyFiles */,
+				8AE33DC7231F438B00B15EE8 /* Nimble_Snapshots.framework in CopyFiles */,
 				8A118F3A231DEBE500F211B6 /* Nimble.framework in CopyFiles */,
 				8A118F3B231DEBE500F211B6 /* Quick.framework in CopyFiles */,
 			);
@@ -99,6 +105,8 @@
 		8A118F6B231E269C00F211B6 /* CustomDecodeError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDecodeError.swift; sourceTree = "<group>"; };
 		8A118F70231E301F00F211B6 /* JavaKeywords.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = JavaKeywords.json; sourceTree = "<group>"; };
 		8A118F78231F2F3300F211B6 /* LoadingViewSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewSpec.swift; sourceTree = "<group>"; };
+		8AE33DC2231F437B00B15EE8 /* FBSnapshotTestCase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSnapshotTestCase.framework; path = Carthage/Build/iOS/FBSnapshotTestCase.framework; sourceTree = "<group>"; };
+		8AE33DC3231F437B00B15EE8 /* Nimble_Snapshots.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble_Snapshots.framework; path = Carthage/Build/iOS/Nimble_Snapshots.framework; sourceTree = "<group>"; };
 		8AFFA677231DDD61000642DB /* PlusUltraQuiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlusUltraQuiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AFFA67A231DDD61000642DB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8AFFA67C231DDD61000642DB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -134,6 +142,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8AE33DC4231F437C00B15EE8 /* FBSnapshotTestCase.framework in Frameworks */,
+				8AE33DC5231F437C00B15EE8 /* Nimble_Snapshots.framework in Frameworks */,
 				8A118F37231DEB9200F211B6 /* Nimble.framework in Frameworks */,
 				8A118F38231DEB9200F211B6 /* Quick.framework in Frameworks */,
 			);
@@ -145,6 +155,8 @@
 		8A118F32231DEB5500F211B6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8AE33DC2231F437B00B15EE8 /* FBSnapshotTestCase.framework */,
+				8AE33DC3231F437B00B15EE8 /* Nimble_Snapshots.framework */,
 				8A118F34231DEB5500F211B6 /* Nimble.framework */,
 				8A118F33231DEB5500F211B6 /* Quick.framework */,
 			);
