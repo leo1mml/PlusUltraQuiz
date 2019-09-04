@@ -11,4 +11,5 @@ import Foundation
 protocol QuizPresenter: AnyObject {
     func present(viewModel: QuizViewModel)
     func presentError()
+    func presentLoadingView()
 }

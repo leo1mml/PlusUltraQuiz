@@ -15,6 +15,7 @@ class FakeQuizPresenter: QuizPresenter {
     
     var hasCalledPresentViewModel = false
     var hasCalledPresentError = false
+    var hasCalledPresentLoading = false
     
     func present(viewModel: QuizViewModel) {
         hasCalledPresentViewModel = true
@@ -23,4 +24,9 @@ class FakeQuizPresenter: QuizPresenter {
     func presentError() {
         hasCalledPresentError = true
     }
+    
+    func presentLoadingView() {
+        hasCalledPresentLoading = true
+    }
+    
 }

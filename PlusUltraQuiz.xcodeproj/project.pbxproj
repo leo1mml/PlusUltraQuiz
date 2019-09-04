@@ -30,6 +30,8 @@
 		8AE33DC5231F437C00B15EE8 /* Nimble_Snapshots.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AE33DC3231F437B00B15EE8 /* Nimble_Snapshots.framework */; };
 		8AE33DC6231F438B00B15EE8 /* FBSnapshotTestCase.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8AE33DC2231F437B00B15EE8 /* FBSnapshotTestCase.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8AE33DC7231F438B00B15EE8 /* Nimble_Snapshots.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8AE33DC3231F437B00B15EE8 /* Nimble_Snapshots.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		8AE33DC9231F56C200B15EE8 /* OverlayLoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE33DC8231F56C200B15EE8 /* OverlayLoadingViewController.swift */; };
+		8AE33DCB231F596F00B15EE8 /* OverlayLoadingViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE33DCA231F596F00B15EE8 /* OverlayLoadingViewControllerSpec.swift */; };
 		8AFFA67B231DDD61000642DB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFFA67A231DDD61000642DB /* AppDelegate.swift */; };
 		8AFFA67D231DDD61000642DB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFFA67C231DDD61000642DB /* ViewController.swift */; };
 		8AFFA682231DDD63000642DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8AFFA681231DDD63000642DB /* Assets.xcassets */; };
@@ -39,7 +41,6 @@
 		8F1ECA7B231EAFBD00ED6CF1 /* InvalidDataDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1ECA7A231EAFBD00ED6CF1 /* InvalidDataDataService.swift */; };
 		8F1ECA7C231EB8C800ED6CF1 /* JavaKeywords.json in Resources */ = {isa = PBXBuildFile; fileRef = 8A118F70231E301F00F211B6 /* JavaKeywords.json */; };
 		8F1ECA80231EC13200ED6CF1 /* CustomDecodeErrorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1ECA7F231EC13200ED6CF1 /* CustomDecodeErrorSpec.swift */; };
-		8F1ECA83231EC3B600ED6CF1 /* QuizPresenterImpSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1ECA82231EC3B600ED6CF1 /* QuizPresenterImpSpec.swift */; };
 		8F1ECA86231EC4E500ED6CF1 /* QuizPresenterImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1ECA85231EC4E500ED6CF1 /* QuizPresenterImp.swift */; };
 		8F9BEE16231F018D00E0F401 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F9BEE14231F018000E0F401 /* SnapKit.framework */; };
 		8F9BEE17231F018D00E0F401 /* SnapKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8F9BEE14231F018000E0F401 /* SnapKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -107,6 +108,8 @@
 		8A118F78231F2F3300F211B6 /* LoadingViewSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewSpec.swift; sourceTree = "<group>"; };
 		8AE33DC2231F437B00B15EE8 /* FBSnapshotTestCase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSnapshotTestCase.framework; path = Carthage/Build/iOS/FBSnapshotTestCase.framework; sourceTree = "<group>"; };
 		8AE33DC3231F437B00B15EE8 /* Nimble_Snapshots.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble_Snapshots.framework; path = Carthage/Build/iOS/Nimble_Snapshots.framework; sourceTree = "<group>"; };
+		8AE33DC8231F56C200B15EE8 /* OverlayLoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayLoadingViewController.swift; sourceTree = "<group>"; };
+		8AE33DCA231F596F00B15EE8 /* OverlayLoadingViewControllerSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayLoadingViewControllerSpec.swift; sourceTree = "<group>"; };
 		8AFFA677231DDD61000642DB /* PlusUltraQuiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlusUltraQuiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AFFA67A231DDD61000642DB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8AFFA67C231DDD61000642DB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -119,7 +122,6 @@
 		8F1ECA78231EACD600ED6CF1 /* FailingDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FailingDataService.swift; sourceTree = "<group>"; };
 		8F1ECA7A231EAFBD00ED6CF1 /* InvalidDataDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvalidDataDataService.swift; sourceTree = "<group>"; };
 		8F1ECA7F231EC13200ED6CF1 /* CustomDecodeErrorSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDecodeErrorSpec.swift; sourceTree = "<group>"; };
-		8F1ECA82231EC3B600ED6CF1 /* QuizPresenterImpSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizPresenterImpSpec.swift; sourceTree = "<group>"; };
 		8F1ECA85231EC4E500ED6CF1 /* QuizPresenterImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizPresenterImp.swift; sourceTree = "<group>"; };
 		8F9BEE14231F018000E0F401 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = SOURCE_ROOT; };
 		8F9BEE1A231F023600E0F401 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
@@ -283,6 +285,7 @@
 			isa = PBXGroup;
 			children = (
 				8A118F78231F2F3300F211B6 /* LoadingViewSpec.swift */,
+				8AE33DCA231F596F00B15EE8 /* OverlayLoadingViewControllerSpec.swift */,
 			);
 			path = Subviews;
 			sourceTree = "<group>";
@@ -367,7 +370,6 @@
 			isa = PBXGroup;
 			children = (
 				8A118F77231F2F2100F211B6 /* Subviews */,
-				8F1ECA82231EC3B600ED6CF1 /* QuizPresenterImpSpec.swift */,
 			);
 			path = Quiz;
 			sourceTree = "<group>";
@@ -384,6 +386,7 @@
 			isa = PBXGroup;
 			children = (
 				8F9BEE1A231F023600E0F401 /* LoadingView.swift */,
+				8AE33DC8231F56C200B15EE8 /* OverlayLoadingViewController.swift */,
 			);
 			path = Subviews;
 			sourceTree = "<group>";
@@ -522,6 +525,7 @@
 				8AFFA67D231DDD61000642DB /* ViewController.swift in Sources */,
 				8F9BEE1B231F023600E0F401 /* LoadingView.swift in Sources */,
 				8A118F58231DFC8500F211B6 /* DataService.swift in Sources */,
+				8AE33DC9231F56C200B15EE8 /* OverlayLoadingViewController.swift in Sources */,
 				8A118F6C231E269C00F211B6 /* CustomDecodeError.swift in Sources */,
 				8A118F6A231E1F8900F211B6 /* QuizViewModel.swift in Sources */,
 				8A118F51231DF8BC00F211B6 /* FetchingState.swift in Sources */,
@@ -547,8 +551,8 @@
 				8A118F53231DFA3C00F211B6 /* FakeFetchingState.swift in Sources */,
 				8F9BEE26231F058900E0F401 /* ViewCodingPartialStub.swift in Sources */,
 				8A118F68231E1CD100F211B6 /* FakeQuizPresenter.swift in Sources */,
+				8AE33DCB231F596F00B15EE8 /* OverlayLoadingViewControllerSpec.swift in Sources */,
 				8F9BEE24231F03F800E0F401 /* ViewCodingSpec.swift in Sources */,
-				8F1ECA83231EC3B600ED6CF1 /* QuizPresenterImpSpec.swift in Sources */,
 				8A118F73231E309B00F211B6 /* FakeDataService.swift in Sources */,
 				8A118F46231DF38B00F211B6 /* FakeState.swift in Sources */,
 			);

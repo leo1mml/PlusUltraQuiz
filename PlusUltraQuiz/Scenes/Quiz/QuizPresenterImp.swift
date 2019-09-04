@@ -6,14 +6,26 @@
 //  Copyright © 2019 Leonel Menezes. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 final class QuizPresenterImp: QuizPresenter {
+    
+    private weak var presentedViewController: UIViewController?
+    private let overlayView = OverlayLoadingViewController()
+    
+    init(viewController: UIViewController) {
+        self.presentedViewController = viewController
+    }
+    
     func present(viewModel: QuizViewModel) {
-        
+        overlayView.dismiss(animated: true, completion: nil)
     }
     
     func presentError() {
         
+    }
+    
+    func presentLoadingView() {
+        presentedViewController?.present(overlayView, animated: true, completion: nil)
     }
 }
