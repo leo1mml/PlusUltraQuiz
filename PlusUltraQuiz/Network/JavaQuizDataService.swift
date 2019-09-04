@@ -14,12 +14,12 @@ final class JavaQuizDataService: DataService {
     }
     
     func fetchData(handler: @escaping (Result<Data, URLError>) -> Void) {
-        URLSession().dataTask(with: url) { (data, response, error) in
+        URLSession.shared.dataTask(with: url) { (data, response, error) in
             if let data = data {
                 handler(.success(data))
             } else {
                 handler(.failure(URLError(.badURL)))
             }
-        }
+        }.resume()
     }
 }
