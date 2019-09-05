@@ -21,7 +21,7 @@ final class QuizInteractor: QuizScreenBusinessLogic {
     private var challengeWords: [String] = []
     private var checkedWords: [String] = []
     private var timer: Timer?
-    private var timeLeft = 10//QuizSettings.gameDuration * 60
+    private var timeLeft = QuizSettings.gameDuration
     
     init(dataService: DataService, presenter: QuizPresenter) {
         self.dataService = dataService
@@ -30,11 +30,8 @@ final class QuizInteractor: QuizScreenBusinessLogic {
     
     func fetchChallenge() {
         presenter.presentLoadingView()
-        if challengeWords.isEmpty {
-            fetchData()
-        } else {
-            
-        }
+        resetGame()
+        fetchData()
     }
     
     private func fetchData() {
@@ -68,6 +65,12 @@ final class QuizInteractor: QuizScreenBusinessLogic {
     private func handle(challenge: Challenge) {
         self.challengeWords = challenge.keywords.map({$0.lowercased()})
         self.presenter.presentChallenge(title: challenge.title, wordsAmount: challenge.keywords.count)
+    }
+    
+    private func resetGame() {
+        self.checkedWords = []
+        timeLeft = QuizSettings.gameDuration
+        presenter.updateTimer(timeLeft: timeLeft)
     }
     
     func checkForCorrectWord(text: String) {

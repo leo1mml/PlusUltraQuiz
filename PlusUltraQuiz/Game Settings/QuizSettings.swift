@@ -9,5 +9,5 @@
 import Foundation
 
 enum QuizSettings {
-    static let gameDuration = 5
+    static let gameDuration = 5 * 60
 }
