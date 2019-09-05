@@ -42,7 +42,7 @@ final class QuizPresenterImp: QuizPresenter {
     }
     
     func presentChallenge(title: String, wordsAmount: Int) {
-        presentationLogic?.presentEmptyView(challengeTitle: title, wordsAmount: wordsAmount)
+        presentationLogic?.presentInitialState(challengeTitle: title, wordsAmount: wordsAmount)
     }
     
     func presentLoadingView() {

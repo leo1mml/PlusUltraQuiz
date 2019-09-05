@@ -7,35 +7,13 @@
 //
 
 import UIKit
-import SnapKit
 
 final class QuizViewController: UIViewController {
     
     static let cellId = "SimpleCell"
     
-    private let vStack: UIStackView = {
-        let stack = UIStackView()
-        stack.axis = .vertical
-        return stack
-    }()
-    
+    private lazy var quizView = QuizView(delegate: self)
     private let overlayLoadingView = OverlayLoadingViewController()
-    
-    private lazy var searchBarDelegate = QuizSearchbarDelegate(delegate: self)
-    
-    private lazy var topView: QuizTopView = {
-        return QuizTopView(searchBarDelegate: searchBarDelegate)
-    }()
-    
-    private let tableView: UITableView = {
-        let tableView = UITableView()
-        tableView.alpha = 0
-        return tableView
-    }()
-    
-    private let tableViewDatasource = QuizTableViewDatasource()
-    
-    private let timerView = TimerView()
     
     private lazy var interactor: QuizScreenBusinessLogic = {
         let presenter = QuizPresenterImp(presentationLogic: self)
@@ -45,9 +23,7 @@ final class QuizViewController: UIViewController {
     
     init() {
         super.init(nibName: nil, bundle: nil)
-        setupViews()
-        view.backgroundColor = .white
-        timerView.actionDelegate = self
+        view = quizView
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -55,20 +31,17 @@ final class QuizViewController: UIViewController {
         interactor.fetchChallenge()
     }
     
+    @available(*, unavailable)
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
 }
 
 extension QuizViewController: QuizPresentationLogic {
     
-    func presentEmptyView(challengeTitle: String, wordsAmount: Int) {
-        self.overlayLoadingView.dismissView()
-        tableView.alpha = 0
-        topView.set(title: challengeTitle)
-        timerView.set(scoreText: "\(QuizSettings.gameDuration):00")
-        timerView.set(scoreText: "0/\(wordsAmount)")
+    func presentInitialState(challengeTitle: String, wordsAmount: Int) {
+        overlayLoadingView.dismissView()
+        quizView.presentEmptyState(title: challengeTitle, wordsAmount: wordsAmount)
     }
     
     func presentLoadingView() {
@@ -76,7 +49,7 @@ extension QuizViewController: QuizPresentationLogic {
     }
     
     func updateTime(timeLeft: String) {
-        timerView.set(timerText: timeLeft)
+        quizView.setTimer(timeLeft: timeLeft)
     }
     
     func presentAlert(alertStructure: AlertStructure) {
@@ -97,9 +70,7 @@ extension QuizViewController: QuizPresentationLogic {
     }
     
     func append(word: String) {
-        tableView.alpha = 1
-        tableViewDatasource.words.append(word)
-        tableView.reloadData()
+        quizView.append(word: word)
     }
 }
 
@@ -116,31 +87,5 @@ extension QuizViewController: TimerActions {
 extension QuizViewController: WordChecker {
     func check(word: String) {
         interactor.checkForCorrectWord(text: word)
-    }
-}
-
-extension QuizViewController: ViewCoding {
-    func buildViewHierarchy() {
-        [topView, tableView, timerView].forEach({vStack.addArrangedSubview($0)})
-        view.addSubview(vStack)
-    }
-    
-    func setupConstraints() {
-        tableView.setContentCompressionResistancePriority(.defaultHigh, for: .vertical)
-        
-        vStack.snp.makeConstraints({
-            $0.top.equalTo(view.safeAreaLayoutGuide)
-            $0.bottom.width.equalToSuperview()
-        })
-    }
-    
-    private enum LayoutConstants {
-        static let timerHeight: CGFloat = 170
-        static let horizontalInset: CGFloat = 16
-    }
-    
-    func additionalSettings() {
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: QuizViewController.cellId)
-        tableView.dataSource = tableViewDatasource
     }
 }

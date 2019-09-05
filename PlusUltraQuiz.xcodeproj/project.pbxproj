@@ -52,6 +52,7 @@
 		8F1ECA7B231EAFBD00ED6CF1 /* InvalidDataDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1ECA7A231EAFBD00ED6CF1 /* InvalidDataDataService.swift */; };
 		8F1ECA7C231EB8C800ED6CF1 /* JavaKeywords.json in Resources */ = {isa = PBXBuildFile; fileRef = 8A118F70231E301F00F211B6 /* JavaKeywords.json */; };
 		8F1ECA80231EC13200ED6CF1 /* CustomDecodeErrorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1ECA7F231EC13200ED6CF1 /* CustomDecodeErrorSpec.swift */; };
+		8F774D652321749F00836B19 /* QuizView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F774D642321749F00836B19 /* QuizView.swift */; };
 		8F9BEE16231F018D00E0F401 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F9BEE14231F018000E0F401 /* SnapKit.framework */; };
 		8F9BEE17231F018D00E0F401 /* SnapKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8F9BEE14231F018000E0F401 /* SnapKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8F9BEE1B231F023600E0F401 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F9BEE1A231F023600E0F401 /* LoadingView.swift */; };
@@ -143,6 +144,7 @@
 		8F1ECA78231EACD600ED6CF1 /* FailingDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FailingDataService.swift; sourceTree = "<group>"; };
 		8F1ECA7A231EAFBD00ED6CF1 /* InvalidDataDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvalidDataDataService.swift; sourceTree = "<group>"; };
 		8F1ECA7F231EC13200ED6CF1 /* CustomDecodeErrorSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDecodeErrorSpec.swift; sourceTree = "<group>"; };
+		8F774D642321749F00836B19 /* QuizView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizView.swift; sourceTree = "<group>"; };
 		8F9BEE14231F018000E0F401 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = SOURCE_ROOT; };
 		8F9BEE1A231F023600E0F401 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		8F9BEE1D231F025800E0F401 /* ViewCoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCoding.swift; sourceTree = "<group>"; };
@@ -188,6 +190,7 @@
 		8A118F47231DF4CE00F211B6 /* TestDoubles */ = {
 			isa = PBXGroup;
 			children = (
+				8F774D61232166DC00836B19 /* Scenes */,
 				8F9BEE22231F03E900E0F401 /* Utils */,
 				8F1ECA7E231EC11500ED6CF1 /* Errors */,
 				8A118F66231E1CB700F211B6 /* Presenters */,
@@ -227,12 +230,11 @@
 		8A118F63231E193800F211B6 /* Quiz */ = {
 			isa = PBXGroup;
 			children = (
+				8F774D632321742600836B19 /* View */,
 				8AB920CB23211F4D00267550 /* Delegate */,
 				8AB920CA23211F3400267550 /* Datasource */,
-				8F9BEE19231F021400E0F401 /* Subviews */,
 				8A118F64231E195A00F211B6 /* QuizPresentationLogic.swift */,
 				8A118F69231E1F8900F211B6 /* QuizViewModel.swift */,
-				8AE33DD8231F7B0100B15EE8 /* QuizViewController.swift */,
 				8A4A49932320E5490050B7B9 /* QuizInteractor.swift */,
 				8A4A49972320F1220050B7B9 /* QuizPresenter.swift */,
 			);
@@ -442,6 +444,23 @@
 			path = Quiz;
 			sourceTree = "<group>";
 		};
+		8F774D61232166DC00836B19 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		8F774D632321742600836B19 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8AE33DD8231F7B0100B15EE8 /* QuizViewController.swift */,
+				8F9BEE19231F021400E0F401 /* Subviews */,
+				8F774D642321749F00836B19 /* QuizView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		8F9BEE13231F016800E0F401 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -592,6 +611,7 @@
 			files = (
 				8A13FC702320A5C60098D8B2 /* TimerView.swift in Sources */,
 				8AE33DD9231F7B0100B15EE8 /* QuizViewController.swift in Sources */,
+				8F774D652321749F00836B19 /* QuizView.swift in Sources */,
 				8A4A49942320E5490050B7B9 /* QuizInteractor.swift in Sources */,
 				8A118F65231E195A00F211B6 /* QuizPresentationLogic.swift in Sources */,
 				8AFFA67D231DDD61000642DB /* ViewController.swift in Sources */,
