@@ -13,20 +13,30 @@ import Nimble
 
 class FakeQuizPresenter: QuizPresentationLogic {
     
-    var hasCalledPresentEmptyView = false
-    var hasCalledPresentError = false
+    var hasCalledPresentInitialState = false
+    var hasCalledPresentAlert = false
     var hasCalledPresentLoading = false
-    
-    func presentAlert() {
-        hasCalledPresentError = true
-    }
+    var hasCalledUpdateTime = false
+    var hasCalledAppend = false
     
     func presentLoadingView() {
         hasCalledPresentLoading = true
     }
     
-    func presentEmptyView(challengeTitle: String, wordsAmount: Int) {
-        hasCalledPresentEmptyView = true
+    func presentInitialState(challengeTitle: String, wordsAmount: Int) {
+        hasCalledPresentInitialState = true
+    }
+    
+    func presentAlert(alertStructure: AlertStructure) {
+        hasCalledPresentAlert = true
+    }
+    
+    func updateTime(timeLeft: String) {
+        hasCalledUpdateTime = true
+    }
+    
+    func append(word: String) {
+        hasCalledAppend = true
     }
     
 }

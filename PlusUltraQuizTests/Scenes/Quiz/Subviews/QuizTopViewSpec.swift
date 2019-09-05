@@ -18,8 +18,8 @@ class QuizTopViewSpec: QuickSpec {
             it("has the expected look and feel") {
                 let size = CGSize(width: 375, height: 200)
                 let frame = CGRect(origin: .zero, size: size)
-                let wordChecker =
-                let searchBarDelegate = QuizSearchbarDelegate(delegate: <#WordChecker#>)
+                let wordChecker = FakeWordChecker()
+                let searchBarDelegate = QuizSearchbarDelegate(delegate: wordChecker)
                 let sut = QuizTopView(frame: frame, searchBarDelegate: searchBarDelegate)
                 sut.set(title: "What are all the java keywords?")
                 expect(sut) == snapshot("QuizTopView", usesDrawRect: false)

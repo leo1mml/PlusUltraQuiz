@@ -45,7 +45,6 @@
 		8AE33DE0231F80BB00B15EE8 /* JavaQuizDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE33DDF231F80BB00B15EE8 /* JavaQuizDataService.swift */; };
 		8AE33DE2231F813200B15EE8 /* QuizURLs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE33DE1231F813200B15EE8 /* QuizURLs.swift */; };
 		8AFFA67B231DDD61000642DB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFFA67A231DDD61000642DB /* AppDelegate.swift */; };
-		8AFFA67D231DDD61000642DB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFFA67C231DDD61000642DB /* ViewController.swift */; };
 		8AFFA682231DDD63000642DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8AFFA681231DDD63000642DB /* Assets.xcassets */; };
 		8AFFA685231DDD63000642DB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8AFFA683231DDD63000642DB /* LaunchScreen.storyboard */; };
 		8F1ECA79231EACD600ED6CF1 /* FailingDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1ECA78231EACD600ED6CF1 /* FailingDataService.swift */; };
@@ -53,6 +52,7 @@
 		8F1ECA7C231EB8C800ED6CF1 /* JavaKeywords.json in Resources */ = {isa = PBXBuildFile; fileRef = 8A118F70231E301F00F211B6 /* JavaKeywords.json */; };
 		8F1ECA80231EC13200ED6CF1 /* CustomDecodeErrorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1ECA7F231EC13200ED6CF1 /* CustomDecodeErrorSpec.swift */; };
 		8F774D652321749F00836B19 /* QuizView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F774D642321749F00836B19 /* QuizView.swift */; };
+		8F774D822321B4E500836B19 /* FakeWordChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F774D812321B4E500836B19 /* FakeWordChecker.swift */; };
 		8F9BEE16231F018D00E0F401 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F9BEE14231F018000E0F401 /* SnapKit.framework */; };
 		8F9BEE17231F018D00E0F401 /* SnapKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8F9BEE14231F018000E0F401 /* SnapKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8F9BEE1B231F023600E0F401 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F9BEE1A231F023600E0F401 /* LoadingView.swift */; };
@@ -135,7 +135,6 @@
 		8AE33DE1231F813200B15EE8 /* QuizURLs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizURLs.swift; sourceTree = "<group>"; };
 		8AFFA677231DDD61000642DB /* PlusUltraQuiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlusUltraQuiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AFFA67A231DDD61000642DB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8AFFA67C231DDD61000642DB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		8AFFA681231DDD63000642DB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8AFFA684231DDD63000642DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8AFFA686231DDD63000642DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -145,6 +144,7 @@
 		8F1ECA7A231EAFBD00ED6CF1 /* InvalidDataDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvalidDataDataService.swift; sourceTree = "<group>"; };
 		8F1ECA7F231EC13200ED6CF1 /* CustomDecodeErrorSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDecodeErrorSpec.swift; sourceTree = "<group>"; };
 		8F774D642321749F00836B19 /* QuizView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizView.swift; sourceTree = "<group>"; };
+		8F774D812321B4E500836B19 /* FakeWordChecker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeWordChecker.swift; sourceTree = "<group>"; };
 		8F9BEE14231F018000E0F401 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = SOURCE_ROOT; };
 		8F9BEE1A231F023600E0F401 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		8F9BEE1D231F025800E0F401 /* ViewCoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCoding.swift; sourceTree = "<group>"; };
@@ -390,7 +390,6 @@
 				8A118F61231E183400F211B6 /* Scenes */,
 				8A118F54231DFB9200F211B6 /* Network */,
 				8AFFA67A231DDD61000642DB /* AppDelegate.swift */,
-				8AFFA67C231DDD61000642DB /* ViewController.swift */,
 				8AFFA681231DDD63000642DB /* Assets.xcassets */,
 				8AFFA683231DDD63000642DB /* LaunchScreen.storyboard */,
 				8AFFA686231DDD63000642DB /* Info.plist */,
@@ -447,6 +446,7 @@
 		8F774D61232166DC00836B19 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				8F774D812321B4E500836B19 /* FakeWordChecker.swift */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -614,7 +614,6 @@
 				8F774D652321749F00836B19 /* QuizView.swift in Sources */,
 				8A4A49942320E5490050B7B9 /* QuizInteractor.swift in Sources */,
 				8A118F65231E195A00F211B6 /* QuizPresentationLogic.swift in Sources */,
-				8AFFA67D231DDD61000642DB /* ViewController.swift in Sources */,
 				8AE33DDC231F7BB200B15EE8 /* Challenge.swift in Sources */,
 				8A4A499A232108760050B7B9 /* AlertStructure.swift in Sources */,
 				8F9BEE1B231F023600E0F401 /* LoadingView.swift in Sources */,
@@ -642,6 +641,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8A118F79231F2F3300F211B6 /* LoadingViewSpec.swift in Sources */,
+				8F774D822321B4E500836B19 /* FakeWordChecker.swift in Sources */,
 				8F1ECA79231EACD600ED6CF1 /* FailingDataService.swift in Sources */,
 				8F1ECA7B231EAFBD00ED6CF1 /* InvalidDataDataService.swift in Sources */,
 				8A118F4B231DF7A200F211B6 /* QuizControllerTests.swift in Sources */,
