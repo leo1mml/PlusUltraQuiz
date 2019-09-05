@@ -32,6 +32,8 @@
 		8A4A49942320E5490050B7B9 /* QuizInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4A49932320E5490050B7B9 /* QuizInteractor.swift */; };
 		8A4A49982320F1220050B7B9 /* QuizPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4A49972320F1220050B7B9 /* QuizPresenter.swift */; };
 		8A4A499A232108760050B7B9 /* AlertStructure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4A4999232108760050B7B9 /* AlertStructure.swift */; };
+		8A4A499C232116FD0050B7B9 /* QuizTableViewDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4A499B232116FD0050B7B9 /* QuizTableViewDatasource.swift */; };
+		8AB920CD23211F6200267550 /* QuizSearchbarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB920CC23211F6200267550 /* QuizSearchbarDelegate.swift */; };
 		8AE33DC4231F437C00B15EE8 /* FBSnapshotTestCase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AE33DC2231F437B00B15EE8 /* FBSnapshotTestCase.framework */; };
 		8AE33DC5231F437C00B15EE8 /* Nimble_Snapshots.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AE33DC3231F437B00B15EE8 /* Nimble_Snapshots.framework */; };
 		8AE33DC6231F438B00B15EE8 /* FBSnapshotTestCase.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8AE33DC2231F437B00B15EE8 /* FBSnapshotTestCase.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -120,6 +122,8 @@
 		8A4A49932320E5490050B7B9 /* QuizInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizInteractor.swift; sourceTree = "<group>"; };
 		8A4A49972320F1220050B7B9 /* QuizPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizPresenter.swift; sourceTree = "<group>"; };
 		8A4A4999232108760050B7B9 /* AlertStructure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertStructure.swift; sourceTree = "<group>"; };
+		8A4A499B232116FD0050B7B9 /* QuizTableViewDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizTableViewDatasource.swift; sourceTree = "<group>"; };
+		8AB920CC23211F6200267550 /* QuizSearchbarDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizSearchbarDelegate.swift; sourceTree = "<group>"; };
 		8AE33DC2231F437B00B15EE8 /* FBSnapshotTestCase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSnapshotTestCase.framework; path = Carthage/Build/iOS/FBSnapshotTestCase.framework; sourceTree = "<group>"; };
 		8AE33DC3231F437B00B15EE8 /* Nimble_Snapshots.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble_Snapshots.framework; path = Carthage/Build/iOS/Nimble_Snapshots.framework; sourceTree = "<group>"; };
 		8AE33DC8231F56C200B15EE8 /* OverlayLoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayLoadingViewController.swift; sourceTree = "<group>"; };
@@ -223,6 +227,8 @@
 		8A118F63231E193800F211B6 /* Quiz */ = {
 			isa = PBXGroup;
 			children = (
+				8AB920CB23211F4D00267550 /* Delegate */,
+				8AB920CA23211F3400267550 /* Datasource */,
 				8F9BEE19231F021400E0F401 /* Subviews */,
 				8A118F64231E195A00F211B6 /* QuizPresentationLogic.swift */,
 				8A118F69231E1F8900F211B6 /* QuizViewModel.swift */,
@@ -308,6 +314,22 @@
 				8A4A498D2320D8110050B7B9 /* QuizSettings.swift */,
 			);
 			path = "Game Settings";
+			sourceTree = "<group>";
+		};
+		8AB920CA23211F3400267550 /* Datasource */ = {
+			isa = PBXGroup;
+			children = (
+				8A4A499B232116FD0050B7B9 /* QuizTableViewDatasource.swift */,
+			);
+			path = Datasource;
+			sourceTree = "<group>";
+		};
+		8AB920CB23211F4D00267550 /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				8AB920CC23211F6200267550 /* QuizSearchbarDelegate.swift */,
+			);
+			path = Delegate;
 			sourceTree = "<group>";
 		};
 		8AE33DDA231F7BA300B15EE8 /* Models */ = {
@@ -577,9 +599,11 @@
 				8A4A499A232108760050B7B9 /* AlertStructure.swift in Sources */,
 				8F9BEE1B231F023600E0F401 /* LoadingView.swift in Sources */,
 				8A118F58231DFC8500F211B6 /* DataService.swift in Sources */,
+				8A4A499C232116FD0050B7B9 /* QuizTableViewDatasource.swift in Sources */,
 				8A13FC692320A06B0098D8B2 /* QuizColor.swift in Sources */,
 				8AE33DC9231F56C200B15EE8 /* OverlayLoadingViewController.swift in Sources */,
 				8A4A49862320B2890050B7B9 /* UIColor+Hex.swift in Sources */,
+				8AB920CD23211F6200267550 /* QuizSearchbarDelegate.swift in Sources */,
 				8A118F6C231E269C00F211B6 /* CustomDecodeError.swift in Sources */,
 				8A13FC722320A7780098D8B2 /* QuizFont.swift in Sources */,
 				8A4A49982320F1220050B7B9 /* QuizPresenter.swift in Sources */,

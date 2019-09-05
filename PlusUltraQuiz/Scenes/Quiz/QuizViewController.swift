@@ -11,6 +11,8 @@ import SnapKit
 
 final class QuizViewController: UIViewController {
     
+    static let cellId = "SimpleCell"
+    
     private let vStack: UIStackView = {
         let stack = UIStackView()
         stack.axis = .vertical
@@ -19,13 +21,19 @@ final class QuizViewController: UIViewController {
     
     private let overlayLoadingView = OverlayLoadingViewController()
     
-    private let topView = QuizTopView()
+    private lazy var searchBarDelegate = QuizSearchbarDelegate(delegate: self)
+    
+    private lazy var topView: QuizTopView = {
+        return QuizTopView(searchBarDelegate: searchBarDelegate)
+    }()
     
     private let tableView: UITableView = {
         let tableView = UITableView()
         tableView.alpha = 0
         return tableView
     }()
+    
+    private let tableViewDatasource = QuizTableViewDatasource()
     
     private let timerView = TimerView()
     
@@ -54,17 +62,13 @@ final class QuizViewController: UIViewController {
 }
 
 extension QuizViewController: QuizPresentationLogic {
+    
     func presentEmptyView(challengeTitle: String, wordsAmount: Int) {
         self.overlayLoadingView.dismissView()
-        self.topView.set(title: challengeTitle)
-        self.timerView.set(scoreText: "\(QuizSettings.gameDuration):00")
-        self.timerView.set(scoreText: "0/\(wordsAmount)")
-    }
-    
-    private func initialSetupForViews(viewModel: QuizViewModel) {
-        topView.set(title: viewModel.title)
-        timerView.set(scoreText: "00/\(viewModel.keywords.count)")
-        timerView.set(timerText: "\(QuizSettings.gameDuration):00")
+        tableView.alpha = 0
+        topView.set(title: challengeTitle)
+        timerView.set(scoreText: "\(QuizSettings.gameDuration):00")
+        timerView.set(scoreText: "0/\(wordsAmount)")
     }
     
     func presentLoadingView() {
@@ -72,7 +76,7 @@ extension QuizViewController: QuizPresentationLogic {
     }
     
     func updateTime(timeLeft: String) {
-        self.timerView.set(timerText: timeLeft)
+        timerView.set(timerText: timeLeft)
     }
     
     func presentAlert(alertStructure: AlertStructure) {
@@ -91,15 +95,27 @@ extension QuizViewController: QuizPresentationLogic {
         alert.addAction(action)
         present(alert, animated: true)
     }
+    
+    func append(word: String) {
+        tableView.alpha = 1
+        tableViewDatasource.words.append(word)
+        tableView.reloadData()
+    }
 }
 
 extension QuizViewController: TimerActions {
     func reset() {
-        
+        interactor.fetchChallenge()
     }
     
     func start() {
         interactor.triggerTimer()
+    }
+}
+
+extension QuizViewController: WordChecker {
+    func check(word: String) {
+        interactor.checkForCorrectWord(text: word)
     }
 }
 
@@ -121,5 +137,10 @@ extension QuizViewController: ViewCoding {
     private enum LayoutConstants {
         static let timerHeight: CGFloat = 170
         static let horizontalInset: CGFloat = 16
+    }
+    
+    func additionalSettings() {
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: QuizViewController.cellId)
+        tableView.dataSource = tableViewDatasource
     }
 }

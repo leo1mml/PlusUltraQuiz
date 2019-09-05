@@ -33,9 +33,10 @@ final class QuizTopView: UIView {
         return stack
     }()
     
-    override init(frame: CGRect) {
+    init(frame: CGRect = .zero, searchBarDelegate: UISearchBarDelegate) {
         super.init(frame: frame)
         setupViews()
+        self.searchBar.delegate = searchBarDelegate
         backgroundColor = .white
     }
     

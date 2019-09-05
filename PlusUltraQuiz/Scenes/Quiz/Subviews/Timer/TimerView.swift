@@ -35,9 +35,14 @@ final class TimerView: UIView {
         btn.setTitleColor(.white, for: .normal)
         btn.titleLabel?.font = QuizFont.button
         btn.backgroundColor = QuizColor.orange
-        btn.setTitle("Start", for: .normal)
+        btn.setTitle(ButtonTitle.start, for: .normal)
         return btn
     }()
+    
+    private enum ButtonTitle {
+        static let reset = "Reset"
+        static let start = "Start"
+    }
     
     private lazy var vStack = UIStackView()
 
@@ -105,7 +110,20 @@ extension TimerView: ViewCoding {
     
     @objc
     private func beginGame() {
+        if actionButton.title(for: .normal) == ButtonTitle.start {
+            startAction()
+        } else {
+            resetAction()
+        }
+    }
+    
+    private func startAction() {
+        actionButton.setTitle(ButtonTitle.reset, for: .normal)
         actionDelegate?.start()
     }
     
+    private func resetAction() {
+        actionButton.setTitle(ButtonTitle.start, for: .normal)
+        actionDelegate?.reset()
+    }
 }

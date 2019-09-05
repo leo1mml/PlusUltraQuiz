@@ -79,6 +79,6 @@ final class QuizPresenterImp: QuizPresenter {
     }
     
     func addCheckedWord(_ word: String) {
-        
+        presentationLogic?.append(word: word)
     }
 }

@@ -13,4 +13,5 @@ protocol QuizPresentationLogic: AnyObject {
     func presentLoadingView()
     func presentAlert(alertStructure: AlertStructure)
     func updateTime(timeLeft: String)
+    func append(word: String)
 }
