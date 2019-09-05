@@ -25,6 +25,8 @@ final class QuizViewController: UIViewController {
     
     private let overlayLoadingView = OverlayLoadingViewController()
     
+    private let topView = QuizTopView()
+    
     private let tableView: UITableView = {
         let tableView = UITableView()
         return tableView
@@ -76,7 +78,7 @@ extension QuizViewController: TimerActions {
 
 extension QuizViewController: ViewCoding {
     func buildViewHierarchy() {
-        [tableView, timerView].forEach({vStack.addArrangedSubview($0)})
+        [topView, tableView, timerView].forEach({vStack.addArrangedSubview($0)})
         view.addSubview(vStack)
     }
     
