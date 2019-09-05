@@ -19,6 +19,7 @@ final class FetchingState: NSObject, State {
     }
     
     func didEnter() {
+        presenter.presentLoadingView()
         fetchData()
     }
     

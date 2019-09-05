@@ -26,6 +26,8 @@
 		8A118F71231E301F00F211B6 /* JavaKeywords.json in Resources */ = {isa = PBXBuildFile; fileRef = 8A118F70231E301F00F211B6 /* JavaKeywords.json */; };
 		8A118F73231E309B00F211B6 /* FakeDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A118F5A231DFD9400F211B6 /* FakeDataService.swift */; };
 		8A118F79231F2F3300F211B6 /* LoadingViewSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A118F78231F2F3300F211B6 /* LoadingViewSpec.swift */; };
+		8A13FC692320A06B0098D8B2 /* QuizColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A13FC682320A06B0098D8B2 /* QuizColor.swift */; };
+		8A13FC6E2320A1010098D8B2 /* QuizColorsSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A13FC6D2320A1010098D8B2 /* QuizColorsSpec.swift */; };
 		8AE33DC4231F437C00B15EE8 /* FBSnapshotTestCase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AE33DC2231F437B00B15EE8 /* FBSnapshotTestCase.framework */; };
 		8AE33DC5231F437C00B15EE8 /* Nimble_Snapshots.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AE33DC3231F437B00B15EE8 /* Nimble_Snapshots.framework */; };
 		8AE33DC6231F438B00B15EE8 /* FBSnapshotTestCase.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8AE33DC2231F437B00B15EE8 /* FBSnapshotTestCase.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -109,6 +111,8 @@
 		8A118F6B231E269C00F211B6 /* CustomDecodeError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDecodeError.swift; sourceTree = "<group>"; };
 		8A118F70231E301F00F211B6 /* JavaKeywords.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = JavaKeywords.json; sourceTree = "<group>"; };
 		8A118F78231F2F3300F211B6 /* LoadingViewSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewSpec.swift; sourceTree = "<group>"; };
+		8A13FC682320A06B0098D8B2 /* QuizColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizColor.swift; sourceTree = "<group>"; };
+		8A13FC6D2320A1010098D8B2 /* QuizColorsSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizColorsSpec.swift; sourceTree = "<group>"; };
 		8AE33DC2231F437B00B15EE8 /* FBSnapshotTestCase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSnapshotTestCase.framework; path = Carthage/Build/iOS/FBSnapshotTestCase.framework; sourceTree = "<group>"; };
 		8AE33DC3231F437B00B15EE8 /* Nimble_Snapshots.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble_Snapshots.framework; path = Carthage/Build/iOS/Nimble_Snapshots.framework; sourceTree = "<group>"; };
 		8AE33DC8231F56C200B15EE8 /* OverlayLoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayLoadingViewController.swift; sourceTree = "<group>"; };
@@ -285,6 +289,7 @@
 		8A118F76231F2BF400F211B6 /* Theme */ = {
 			isa = PBXGroup;
 			children = (
+				8A13FC682320A06B0098D8B2 /* QuizColor.swift */,
 			);
 			path = Theme;
 			sourceTree = "<group>";
@@ -296,6 +301,14 @@
 				8AE33DCA231F596F00B15EE8 /* OverlayLoadingViewControllerSpec.swift */,
 			);
 			path = Subviews;
+			sourceTree = "<group>";
+		};
+		8A13FC6C2320A0BD0098D8B2 /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				8A13FC6D2320A1010098D8B2 /* QuizColorsSpec.swift */,
+			);
+			path = Theme;
 			sourceTree = "<group>";
 		};
 		8AE33DDA231F7BA300B15EE8 /* Models */ = {
@@ -364,6 +377,7 @@
 		8AFFA68E231DDD63000642DB /* PlusUltraQuizTests */ = {
 			isa = PBXGroup;
 			children = (
+				8A13FC6C2320A0BD0098D8B2 /* Theme */,
 				8F9BEE1F231F02AE00E0F401 /* Utils */,
 				8F1ECA81231EC3A300ED6CF1 /* Scenes */,
 				8A118F6D231E2CD100F211B6 /* Resources */,
@@ -559,6 +573,7 @@
 				8AE33DDC231F7BB200B15EE8 /* Challenge.swift in Sources */,
 				8F9BEE1B231F023600E0F401 /* LoadingView.swift in Sources */,
 				8A118F58231DFC8500F211B6 /* DataService.swift in Sources */,
+				8A13FC692320A06B0098D8B2 /* QuizColor.swift in Sources */,
 				8AE33DC9231F56C200B15EE8 /* OverlayLoadingViewController.swift in Sources */,
 				8A118F6C231E269C00F211B6 /* CustomDecodeError.swift in Sources */,
 				8AE33DE2231F813200B15EE8 /* QuizURLs.swift in Sources */,
@@ -581,6 +596,7 @@
 				8F1ECA7B231EAFBD00ED6CF1 /* InvalidDataDataService.swift in Sources */,
 				8A118F4B231DF7A200F211B6 /* QuizControllerTests.swift in Sources */,
 				8A118F5E231E084B00F211B6 /* FetchingStateSpec.swift in Sources */,
+				8A13FC6E2320A1010098D8B2 /* QuizColorsSpec.swift in Sources */,
 				8F9BEE21231F02BE00E0F401 /* ViewCodingStub.swift in Sources */,
 				8F1ECA80231EC13200ED6CF1 /* CustomDecodeErrorSpec.swift in Sources */,
 				8AFFA690231DDD63000642DB /* StateMachineSpec.swift in Sources */,

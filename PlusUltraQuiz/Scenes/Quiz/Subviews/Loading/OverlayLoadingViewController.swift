@@ -28,6 +28,10 @@ class OverlayLoadingViewController: UIViewController {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    func dismissView() {
+        dismiss(animated: true, completion: nil)
+    }
 }
 
 extension OverlayLoadingViewController: ViewCoding {
@@ -47,9 +51,5 @@ extension OverlayLoadingViewController: ViewCoding {
         static let loadingSizeRatio: CGFloat = 0.5
         
         static let alphaOverlay: CGFloat = 0.7
-    }
-    
-    func additionalSettings() {
-        view.backgroundColor = UIColor.black.withAlphaComponent(LayoutConstants.alphaOverlay)
     }
 }

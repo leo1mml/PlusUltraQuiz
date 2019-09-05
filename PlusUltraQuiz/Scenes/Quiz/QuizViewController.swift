@@ -10,15 +10,22 @@ import UIKit
 
 final class QuizViewController: UIViewController {
     
-    private lazy var presentationStateMachine: StateMachine = {
+    private lazy var stateMachine: StateMachine = {
         let fetchState = FetchingState(dataService: JavaQuizDataService(), presenter: self)
         let stateMachine = StateMachine(states: [fetchState])
         return stateMachine
     }()
     
+    private let overlayLoadingView = OverlayLoadingViewController()
+    
     init() {
         super.init(nibName: nil, bundle: nil)
-        presentationStateMachine.enter(FetchingState.self)
+        self.view.backgroundColor = .white
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        stateMachine.enter(FetchingState.self)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -29,7 +36,7 @@ final class QuizViewController: UIViewController {
 
 extension QuizViewController: QuizPresentationLogic {
     func present(viewModel: QuizViewModel) {
-        
+        self.overlayLoadingView.dismissView()
     }
     
     func presentError() {
@@ -37,6 +44,6 @@ extension QuizViewController: QuizPresentationLogic {
     }
     
     func presentLoadingView() {
-        
+        present(overlayLoadingView, animated: true, completion: nil)
     }
 }
