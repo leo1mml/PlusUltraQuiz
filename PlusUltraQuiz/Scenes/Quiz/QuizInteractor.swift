@@ -34,12 +34,18 @@ final class QuizInteractor: QuizScreenBusinessLogic {
         fetchData()
     }
     
+    private func resetGame() {
+        self.checkedWords = []
+        timeLeft = QuizSettings.gameDuration
+        presenter.updateTimer(timeLeft: timeLeft)
+    }
+    
     private func fetchData() {
         dataService.fetchData { [weak self] result in
             DispatchQueue.main.async {
                 switch result {
                 case let .success(data):
-                    self?.tryToHandle(data: data)
+                    self?.tryToPresentChallenge(on: data)
                 case .failure(_):
                     self?.presenter.presentErrorAlert()
                 }
@@ -47,9 +53,9 @@ final class QuizInteractor: QuizScreenBusinessLogic {
         }
     }
     
-    private func tryToHandle(data: Data) {
+    private func tryToPresentChallenge(on data: Data) {
         if let challenge = try? self.tryToGetChallenge(from: data) {
-            handle(challenge: challenge)
+            present(challenge: challenge)
         } else {
             self.presenter.presentErrorAlert()
         }
@@ -62,15 +68,9 @@ final class QuizInteractor: QuizScreenBusinessLogic {
         throw CustomDecodeError.NonCompatibleStruct
     }
     
-    private func handle(challenge: Challenge) {
+    private func present(challenge: Challenge) {
         self.challengeWords = challenge.keywords.map({$0.lowercased()})
         self.presenter.presentChallenge(title: challenge.title, wordsAmount: challenge.keywords.count)
-    }
-    
-    private func resetGame() {
-        self.checkedWords = []
-        timeLeft = QuizSettings.gameDuration
-        presenter.updateTimer(timeLeft: timeLeft)
     }
     
     func checkForCorrectWord(text: String) {
