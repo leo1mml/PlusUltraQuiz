@@ -48,6 +48,10 @@ final class QuizTopView: UIView {
     func set(title: String) {
         self.titleLabel.text = title
     }
+    
+    func enableTextField() {
+        self.searchBar.isUserInteractionEnabled = true
+    }
 }
 
 extension QuizTopView: ViewCoding {
