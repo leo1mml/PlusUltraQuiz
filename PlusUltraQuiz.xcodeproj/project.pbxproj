@@ -33,6 +33,7 @@
 		8A13FC762320AE6E0098D8B2 /* TimerViewSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A13FC752320AE6E0098D8B2 /* TimerViewSpec.swift */; };
 		8A4A49862320B2890050B7B9 /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4A49852320B2890050B7B9 /* UIColor+Hex.swift */; };
 		8A4A49892320C6190050B7B9 /* QuizTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4A49882320C6190050B7B9 /* QuizTopView.swift */; };
+		8A4A498B2320CF4D0050B7B9 /* QuizTopViewSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4A498A2320CF4D0050B7B9 /* QuizTopViewSpec.swift */; };
 		8AE33DC4231F437C00B15EE8 /* FBSnapshotTestCase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AE33DC2231F437B00B15EE8 /* FBSnapshotTestCase.framework */; };
 		8AE33DC5231F437C00B15EE8 /* Nimble_Snapshots.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AE33DC3231F437B00B15EE8 /* Nimble_Snapshots.framework */; };
 		8AE33DC6231F438B00B15EE8 /* FBSnapshotTestCase.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8AE33DC2231F437B00B15EE8 /* FBSnapshotTestCase.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -123,6 +124,7 @@
 		8A13FC752320AE6E0098D8B2 /* TimerViewSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewSpec.swift; sourceTree = "<group>"; };
 		8A4A49852320B2890050B7B9 /* UIColor+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
 		8A4A49882320C6190050B7B9 /* QuizTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizTopView.swift; sourceTree = "<group>"; };
+		8A4A498A2320CF4D0050B7B9 /* QuizTopViewSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizTopViewSpec.swift; sourceTree = "<group>"; };
 		8AE33DC2231F437B00B15EE8 /* FBSnapshotTestCase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSnapshotTestCase.framework; path = Carthage/Build/iOS/FBSnapshotTestCase.framework; sourceTree = "<group>"; };
 		8AE33DC3231F437B00B15EE8 /* Nimble_Snapshots.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble_Snapshots.framework; path = Carthage/Build/iOS/Nimble_Snapshots.framework; sourceTree = "<group>"; };
 		8AE33DC8231F56C200B15EE8 /* OverlayLoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayLoadingViewController.swift; sourceTree = "<group>"; };
@@ -311,6 +313,7 @@
 			children = (
 				8A13FC742320AE5B0098D8B2 /* Timer */,
 				8A13FC732320AE4F0098D8B2 /* Loading */,
+				8A4A498A2320CF4D0050B7B9 /* QuizTopViewSpec.swift */,
 			);
 			path = Subviews;
 			sourceTree = "<group>";
@@ -640,6 +643,7 @@
 				8A118F4B231DF7A200F211B6 /* QuizControllerTests.swift in Sources */,
 				8A118F5E231E084B00F211B6 /* FetchingStateSpec.swift in Sources */,
 				8A13FC6E2320A1010098D8B2 /* QuizColorsSpec.swift in Sources */,
+				8A4A498B2320CF4D0050B7B9 /* QuizTopViewSpec.swift in Sources */,
 				8F9BEE21231F02BE00E0F401 /* ViewCodingStub.swift in Sources */,
 				8F1ECA80231EC13200ED6CF1 /* CustomDecodeErrorSpec.swift in Sources */,
 				8AFFA690231DDD63000642DB /* StateMachineSpec.swift in Sources */,

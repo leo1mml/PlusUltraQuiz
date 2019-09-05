@@ -1,8 +1,8 @@
 //
-//  TimerViewSpec.swift
+//  QuizTopViewSpec.swift
 //  PlusUltraQuizTests
 //
-//  Created by Leonel Menezes on 04/09/19.
+//  Created by Leonel Menezes on 05/09/19.
 //  Copyright © 2019 Leonel Menezes. All rights reserved.
 //
 
@@ -12,14 +12,14 @@ import Nimble
 import Nimble_Snapshots
 @testable import PlusUltraQuiz
 
-final class TimerViewSpec: QuickSpec {
+class QuizTopViewSpec: QuickSpec {
     override func spec() {
-        describe("TimerView") {
+        describe("QuizTopView") {
             it("has the expected look and feel") {
-                let size = CGSize(width: 355, height: 180)
+                let size = CGSize(width: 375, height: 200)
                 let frame = CGRect(origin: .zero, size: size)
-                let sut = TimerView(frame: frame)
-                expect(sut) == snapshot("TimerView", usesDrawRect: false)
+                let sut = QuizTopView(frame: frame)
+                expect(sut) == snapshot("QuizTopView", usesDrawRect: false)
             }
         }
     }
