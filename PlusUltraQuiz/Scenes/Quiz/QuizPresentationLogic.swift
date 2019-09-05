@@ -9,7 +9,8 @@
 import Foundation
 
 protocol QuizPresentationLogic: AnyObject {
-    func present(viewModel: QuizViewModel)
-    func presentAlert()
+    func presentEmptyView(challengeTitle: String, wordsAmount: Int)
     func presentLoadingView()
+    func presentAlert(alertStructure: AlertStructure)
+    func updateTime(timeLeft: String)
 }

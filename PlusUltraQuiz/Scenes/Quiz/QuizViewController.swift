@@ -11,13 +11,6 @@ import SnapKit
 
 final class QuizViewController: UIViewController {
     
-    private lazy var stateMachine: StateMachine = {
-        let fetchState = FetchingState(dataService: JavaQuizDataService(), presenter: self)
-        let readyToPlay = ReadyToPlay()
-        let stateMachine = StateMachine(states: [fetchState])
-        return stateMachine
-    }()
-    
     private let vStack: UIStackView = {
         let stack = UIStackView()
         stack.axis = .vertical
@@ -36,6 +29,12 @@ final class QuizViewController: UIViewController {
     
     private let timerView = TimerView()
     
+    private lazy var interactor: QuizScreenBusinessLogic = {
+        let presenter = QuizPresenterImp(presentationLogic: self)
+        let interactor = QuizInteractor(dataService: JavaQuizDataService(), presenter: presenter)
+        return interactor
+    }()
+    
     init() {
         super.init(nibName: nil, bundle: nil)
         setupViews()
@@ -45,7 +44,7 @@ final class QuizViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        stateMachine.enter(FetchingState.self)
+        interactor.fetchChallenge()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -55,14 +54,11 @@ final class QuizViewController: UIViewController {
 }
 
 extension QuizViewController: QuizPresentationLogic {
-    func present(viewModel: QuizViewModel) {
+    func presentEmptyView(challengeTitle: String, wordsAmount: Int) {
         self.overlayLoadingView.dismissView()
-        if stateMachine.currentState?.isKind(of: FetchingState.self) ?? false {
-            initialSetupForViews(viewModel: viewModel)
-            stateMachine.enter(ReadyToPlay.self)
-        } else {
-            //TODO: enter PlayingState
-        }
+        self.topView.set(title: challengeTitle)
+        self.timerView.set(scoreText: "\(QuizSettings.gameDuration):00")
+        self.timerView.set(scoreText: "0/\(wordsAmount)")
     }
     
     private func initialSetupForViews(viewModel: QuizViewModel) {
@@ -71,12 +67,29 @@ extension QuizViewController: QuizPresentationLogic {
         timerView.set(timerText: "\(QuizSettings.gameDuration):00")
     }
     
-    func presentAlert() {
-        
-    }
-    
     func presentLoadingView() {
         present(overlayLoadingView, animated: true, completion: nil)
+    }
+    
+    func updateTime(timeLeft: String) {
+        self.timerView.set(timerText: timeLeft)
+    }
+    
+    func presentAlert(alertStructure: AlertStructure) {
+        createAlert(alertStructure: alertStructure) { [weak self] in
+            self?.interactor.fetchChallenge()
+        }
+    }
+    
+    private func createAlert(alertStructure: AlertStructure, handler: @escaping () -> Void) {
+        let alert = UIAlertController(title: alertStructure.title,
+                                      message: alertStructure.message,
+                                      preferredStyle: .alert)
+        let action = UIAlertAction(title: alertStructure.buttonTitle, style: .default) { _ in
+            handler()
+        }
+        alert.addAction(action)
+        present(alert, animated: true)
     }
 }
 
@@ -86,15 +99,7 @@ extension QuizViewController: TimerActions {
     }
     
     func start() {
-        if stateMachine.currentState?.isKind(of: ReadyToPlay.self) ?? false {
-            // begin timer and allow typing
-        }
-    }
-    
-    func updateTimer(interval: TimeInterval) {
-        if interval == 0 {
-            presentAlert()
-        }
+        interactor.triggerTimer()
     }
 }
 

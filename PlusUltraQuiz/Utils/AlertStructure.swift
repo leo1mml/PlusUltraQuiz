@@ -1,5 +1,5 @@
 //
-//  ReadyToPlayState.swift
+//  AlertStructure.swift
 //  PlusUltraQuiz
 //
 //  Created by Leonel Menezes on 05/09/19.
@@ -8,6 +8,8 @@
 
 import Foundation
 
-final class ReadyToPlay: NSObject, State {
-    func didEnter() {}
+struct AlertStructure {
+    var title: String
+    var message: String
+    var buttonTitle: String
 }

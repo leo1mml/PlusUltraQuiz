@@ -13,13 +13,9 @@ import Nimble
 
 class FakeQuizPresenter: QuizPresentationLogic {
     
-    var hasCalledPresentViewModel = false
+    var hasCalledPresentEmptyView = false
     var hasCalledPresentError = false
     var hasCalledPresentLoading = false
-    
-    func present(viewModel: QuizViewModel) {
-        hasCalledPresentViewModel = true
-    }
     
     func presentAlert() {
         hasCalledPresentError = true
@@ -27,6 +23,10 @@ class FakeQuizPresenter: QuizPresentationLogic {
     
     func presentLoadingView() {
         hasCalledPresentLoading = true
+    }
+    
+    func presentEmptyView(challengeTitle: String, wordsAmount: Int) {
+        hasCalledPresentEmptyView = true
     }
     
 }

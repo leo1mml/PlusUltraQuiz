@@ -12,7 +12,6 @@ import SnapKit
 protocol TimerActions: AnyObject {
     func reset()
     func start()
-    func updateTimer(interval: TimeInterval)
 }
 
 final class TimerView: UIView {
@@ -101,6 +100,12 @@ extension TimerView: ViewCoding {
     func additionalSettings() {
         self.backgroundColor = QuizColor.offWhite
         self.actionButton.layer.cornerRadius = LayoutConstants.buttonCornerRadius
+        self.actionButton.addTarget(self, action: #selector(beginGame), for: .touchUpInside)
+    }
+    
+    @objc
+    private func beginGame() {
+        actionDelegate?.start()
     }
     
 }
