@@ -21,7 +21,7 @@ class FakeQuizPresenter: QuizPresentationLogic {
         hasCalledPresentViewModel = true
     }
     
-    func presentError() {
+    func presentAlert() {
         hasCalledPresentError = true
     }
     

@@ -10,6 +10,6 @@ import Foundation
 
 protocol QuizPresentationLogic: AnyObject {
     func present(viewModel: QuizViewModel)
-    func presentError()
+    func presentAlert()
     func presentLoadingView()
 }

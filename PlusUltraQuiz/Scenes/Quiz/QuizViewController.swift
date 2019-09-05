@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SnapKit
 
 final class QuizViewController: UIViewController {
     
@@ -16,11 +17,26 @@ final class QuizViewController: UIViewController {
         return stateMachine
     }()
     
+    private let vStack: UIStackView = {
+        let stack = UIStackView()
+        stack.axis = .vertical
+        return stack
+    }()
+    
     private let overlayLoadingView = OverlayLoadingViewController()
+    
+    private let tableView: UITableView = {
+        let tableView = UITableView()
+        return tableView
+    }()
+    
+    private let timerView = TimerView()
     
     init() {
         super.init(nibName: nil, bundle: nil)
-        self.view.backgroundColor = .white
+        setupViews()
+        view.backgroundColor = .white
+        timerView.actionDelegate = self
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -39,11 +55,42 @@ extension QuizViewController: QuizPresentationLogic {
         self.overlayLoadingView.dismissView()
     }
     
-    func presentError() {
+    func presentAlert() {
         
     }
     
     func presentLoadingView() {
         present(overlayLoadingView, animated: true, completion: nil)
+    }
+}
+
+extension QuizViewController: TimerActions {
+    func reset() {
+        
+    }
+    
+    func start() {
+        
+    }
+}
+
+extension QuizViewController: ViewCoding {
+    func buildViewHierarchy() {
+        [tableView, timerView].forEach({vStack.addArrangedSubview($0)})
+        view.addSubview(vStack)
+    }
+    
+    func setupConstraints() {
+        tableView.setContentCompressionResistancePriority(.defaultHigh, for: .vertical)
+        
+        vStack.snp.makeConstraints({
+            $0.top.equalTo(view.safeAreaLayoutGuide)
+            $0.bottom.width.equalToSuperview()
+        })
+    }
+    
+    private enum LayoutConstants {
+        static let timerHeight: CGFloat = 170
+        static let horizontalInset: CGFloat = 16
     }
 }

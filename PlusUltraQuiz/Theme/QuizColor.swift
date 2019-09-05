@@ -9,6 +9,6 @@
 import UIKit
 
 enum QuizColor {
-    static let offwhite = UIColor(red: 245, green: 245, blue: 245, alpha: 1)
-    static let orange = UIColor(red: 255, green: 131, blue: 0, alpha: 1)
+    static let offWhite = UIColor(red: 245, green: 245, blue: 245)
+    static let orange = UIColor(red: 255, green: 131, blue: 0)
 }

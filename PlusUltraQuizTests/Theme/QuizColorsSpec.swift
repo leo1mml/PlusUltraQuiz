@@ -14,7 +14,7 @@ import Nimble
 final class QuizColorSpec: QuickSpec {
     override func spec() {
         it("has to return non nil values") {
-            expect(QuizColor.offwhite).toNot(beNil())
+            expect(QuizColor.offWhite).toNot(beNil())
             expect(QuizColor.orange).toNot(beNil())
         }
     }

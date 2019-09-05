@@ -11,7 +11,7 @@ import Foundation
 final class FetchingState: NSObject, State {
     
     private var dataService: DataService
-    private var presenter: QuizPresentationLogic
+    private weak var presenter: QuizPresentationLogic?
     
     init(dataService: DataService, presenter: QuizPresentationLogic) {
         self.dataService = dataService
@@ -19,7 +19,7 @@ final class FetchingState: NSObject, State {
     }
     
     func didEnter() {
-        presenter.presentLoadingView()
+        presenter?.presentLoadingView()
         fetchData()
     }
     
@@ -29,7 +29,7 @@ final class FetchingState: NSObject, State {
             case let .success(data):
                 self?.tryToPresentViewModel(from: data)
             case .failure(_):
-                self?.presenter.presentError()
+                self?.presenter?.presentAlert()
             }
         }
     }
@@ -37,9 +37,9 @@ final class FetchingState: NSObject, State {
     func tryToPresentViewModel(from data: Data) {
         do {
             let viewModel = try getViewModel(from: data)
-            presenter.present(viewModel: viewModel)
+            presenter?.present(viewModel: viewModel)
         } catch {
-            presenter.presentError()
+            presenter?.presentAlert()
         }
     }
     
