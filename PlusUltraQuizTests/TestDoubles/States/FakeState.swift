@@ -10,7 +10,7 @@ import Foundation
 @testable
 import PlusUltraQuiz
 
-final class FakeState: State {
+final class FakeState: NSObject, State {
     var hasCalledDidEnter: Bool = false
     
     func didEnter() {

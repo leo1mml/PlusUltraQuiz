@@ -11,7 +11,7 @@ import Quick
 import Nimble
 @testable import PlusUltraQuiz
 
-final class FakeFetchingState: State {
+final class FakeFetchingState: NSObject, State {
     
     private let dataService: DataService
     

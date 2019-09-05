@@ -8,7 +8,7 @@
 
 import Foundation
 
-final class FetchingState: State {
+final class FetchingState: NSObject, State {
     
     private var dataService: DataService
     private var presenter: QuizPresentationLogic

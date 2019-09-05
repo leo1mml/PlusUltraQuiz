@@ -8,6 +8,6 @@
 
 import Foundation
 
-protocol State {
+protocol State: NSObject {
     func didEnter()
 }

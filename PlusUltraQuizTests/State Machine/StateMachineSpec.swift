@@ -17,45 +17,37 @@ class StateMachineSpec: QuickSpec {
             var sut: StateMachine?
             
             describe("init") {
-                it("has to set an initial state") {
-                    let initialState = FakeState()
-                    sut = StateMachine(initialState: initialState)
-                    expect(sut?.currentState).toNot(beNil())
-                    expect(sut?.currentState).to(be(initialState))
-                }
-                
-                context("when enters initial state") {
-                    var fakeState: FakeState?
-                    it("has to call didEnter") {
-                        fakeState = FakeState()
-                        sut = StateMachine(initialState: fakeState!)
-                        expect(fakeState?.hasCalledDidEnter).to(beTruthy())
-                    }
+                it("has to set a state") {
+                    let state = FakeState()
+                    sut = StateMachine(states: [state])
+                    sut?.enter(FakeState.self)
+                    
                 }
             }
             describe("enter(state:)") {
-                var initialState = FakeState()
                 let dummyService = FakeDataService()
-                var secondState: State = FakeFetchingState(dataService: dummyService)
+                var initialState: State?
+                var secondState: State?
                 beforeEach {
-                    sut = StateMachine(initialState: initialState)
-                    sut?.enter(state: secondState)
+                    initialState = FakeState()
+                    secondState = FakeFetchingState(dataService: dummyService)
+                    sut = StateMachine(states: [initialState!, secondState!])
+                    sut?.enter(FakeState.self)
                 }
                 context("when the next state is different from the current one") {
                     it("has to call didEnter from the current state") {
-                        let state = secondState as? FakeFetchingState
-                        expect(state).toNot(beNil())
-                        expect(state?.hasCalledDidEnter).to(beTruthy())
+                        sut?.enter(FakeState.self)
+                        sut?.enter(FakeFetchingState.self)
+                        let secondState = secondState as? FakeFetchingState
+                        expect(secondState?.hasCalledDidEnter).to(beTruthy())
                     }
                 }
                 
                 context("when the next state is the same") {
                     
                     beforeEach {
-                        initialState = FakeState()
-                        secondState = FakeState()
-                        sut = StateMachine(initialState: initialState)
-                        sut?.enter(state: secondState)
+                        sut = StateMachine(states: [initialState!])
+                        sut?.enter(FakeState.self)
                     }
                     
                     it("has to not call didEnter from the next state") {
@@ -64,7 +56,6 @@ class StateMachineSpec: QuickSpec {
                         expect(state?.hasCalledDidEnter).toNot(beTruthy())
                     }
                 }
-                
             }
         }
     }

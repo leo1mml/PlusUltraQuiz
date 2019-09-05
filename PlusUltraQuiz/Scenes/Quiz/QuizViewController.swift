@@ -10,12 +10,15 @@ import UIKit
 
 final class QuizViewController: UIViewController {
     
-    private var presentationStateMachine: StateMachine?
+    private lazy var presentationStateMachine: StateMachine = {
+        let fetchState = FetchingState(dataService: JavaQuizDataService(), presenter: self)
+        let stateMachine = StateMachine(states: [fetchState])
+        return stateMachine
+    }()
     
     init() {
         super.init(nibName: nil, bundle: nil)
-        let fetchState = FetchingState(dataService: JavaQuizDataService(), presenter: self)
-        presentationStateMachine = StateMachine(initialState: fetchState)
+        presentationStateMachine.enter(FetchingState.self)
     }
     
     required init?(coder aDecoder: NSCoder) {

@@ -10,22 +10,29 @@ import Foundation
 
 final class StateMachine {
     
-    private(set) var currentState: State
+    private let states: [State]
+    private(set) var currentState: State?
     
-    init(initialState: State) {
-        self.currentState = initialState
-        currentState.didEnter()
+    init(states: [State]) {
+        self.states = states
     }
     
-    func enter(state: State) {
-        if canEnter(state) {
-            currentState = state
-            currentState.didEnter()
+    func enter(_ stateType: AnyClass) {
+        for state in states {
+            if state.isKind(of: stateType) && isCurrentStateDifferentFrom(stateType) {
+                change(to: state)
+                return
+            }
         }
     }
     
-    private func canEnter(_ nextState: State) -> Bool {
-        let isDifferentType = type(of: nextState).self != type(of: currentState).self
+    private func isCurrentStateDifferentFrom(_ nextState: AnyClass) -> Bool {
+        let isDifferentType = nextState != type(of: currentState).self
         return isDifferentType
+    }
+    
+    private func change(to state: State) {
+        self.currentState = state
+        self.currentState?.didEnter()
     }
 }
