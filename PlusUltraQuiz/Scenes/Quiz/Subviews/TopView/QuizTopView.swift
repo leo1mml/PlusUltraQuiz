@@ -15,7 +15,6 @@ final class QuizTopView: UIView {
         label.font = QuizFont.largeTitle
         label.numberOfLines = 0
         label.lineBreakMode = NSLineBreakMode.byTruncatingTail
-        label.text = "What are all the java keywords?"
         return label
     }()
     
@@ -43,6 +42,10 @@ final class QuizTopView: UIView {
     @available(*, unavailable)
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func set(title: String) {
+        self.titleLabel.text = title
     }
 }
 

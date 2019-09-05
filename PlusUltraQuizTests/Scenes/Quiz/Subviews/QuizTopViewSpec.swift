@@ -19,6 +19,7 @@ class QuizTopViewSpec: QuickSpec {
                 let size = CGSize(width: 375, height: 200)
                 let frame = CGRect(origin: .zero, size: size)
                 let sut = QuizTopView(frame: frame)
+                sut.set(title: "What are all the java keywords?")
                 expect(sut) == snapshot("QuizTopView", usesDrawRect: false)
             }
         }

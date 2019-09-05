@@ -25,11 +25,13 @@ final class FetchingState: NSObject, State {
     
     private func fetchData() {
         dataService.fetchData { [weak self] result in
-            switch result {
-            case let .success(data):
-                self?.tryToPresentViewModel(from: data)
-            case .failure(_):
-                self?.presenter?.presentAlert()
+            DispatchQueue.main.async {
+                switch result {
+                case let .success(data):
+                    self?.tryToPresentViewModel(from: data)
+                case .failure(_):
+                    self?.presenter?.presentAlert()
+                }
             }
         }
     }

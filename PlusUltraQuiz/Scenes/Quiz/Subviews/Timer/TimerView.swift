@@ -12,6 +12,7 @@ import SnapKit
 protocol TimerActions: AnyObject {
     func reset()
     func start()
+    func updateTimer(interval: TimeInterval)
 }
 
 final class TimerView: UIView {
@@ -21,14 +22,12 @@ final class TimerView: UIView {
     private let scoreCountLabel: UILabel = {
         let label = UILabel()
         label.font = QuizFont.largeTitle
-        label.text = "00/50"
         return label
     }()
     
     private let timerLabel: UILabel = {
         let label = UILabel()
         label.font = QuizFont.largeTitle
-        label.text = "5:00"
         return label
     }()
     
@@ -51,6 +50,14 @@ final class TimerView: UIView {
     @available(*, unavailable)
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func set(timerText: String) {
+        self.timerLabel.text = timerText
+    }
+    
+    func set(scoreText: String) {
+        self.scoreCountLabel.text = scoreText
     }
 }
 

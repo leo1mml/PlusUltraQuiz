@@ -19,6 +19,8 @@ final class TimerViewSpec: QuickSpec {
                 let size = CGSize(width: 355, height: 180)
                 let frame = CGRect(origin: .zero, size: size)
                 let sut = TimerView(frame: frame)
+                sut.set(scoreText: "00/50")
+                sut.set(timerText: "5:00")
                 expect(sut) == snapshot("TimerView", usesDrawRect: false)
             }
         }

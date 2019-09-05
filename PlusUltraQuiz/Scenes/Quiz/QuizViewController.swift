@@ -13,6 +13,7 @@ final class QuizViewController: UIViewController {
     
     private lazy var stateMachine: StateMachine = {
         let fetchState = FetchingState(dataService: JavaQuizDataService(), presenter: self)
+        let readyToPlay = ReadyToPlay()
         let stateMachine = StateMachine(states: [fetchState])
         return stateMachine
     }()
@@ -29,6 +30,7 @@ final class QuizViewController: UIViewController {
     
     private let tableView: UITableView = {
         let tableView = UITableView()
+        tableView.alpha = 0
         return tableView
     }()
     
@@ -55,6 +57,18 @@ final class QuizViewController: UIViewController {
 extension QuizViewController: QuizPresentationLogic {
     func present(viewModel: QuizViewModel) {
         self.overlayLoadingView.dismissView()
+        if stateMachine.currentState?.isKind(of: FetchingState.self) ?? false {
+            initialSetupForViews(viewModel: viewModel)
+            stateMachine.enter(ReadyToPlay.self)
+        } else {
+            //TODO: enter PlayingState
+        }
+    }
+    
+    private func initialSetupForViews(viewModel: QuizViewModel) {
+        topView.set(title: viewModel.title)
+        timerView.set(scoreText: "00/\(viewModel.keywords.count)")
+        timerView.set(timerText: "\(QuizSettings.gameDuration):00")
     }
     
     func presentAlert() {
@@ -72,7 +86,15 @@ extension QuizViewController: TimerActions {
     }
     
     func start() {
-        
+        if stateMachine.currentState?.isKind(of: ReadyToPlay.self) ?? false {
+            // begin timer and allow typing
+        }
+    }
+    
+    func updateTimer(interval: TimeInterval) {
+        if interval == 0 {
+            presentAlert()
+        }
     }
 }
 

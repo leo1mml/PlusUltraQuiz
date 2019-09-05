@@ -34,6 +34,8 @@
 		8A4A49862320B2890050B7B9 /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4A49852320B2890050B7B9 /* UIColor+Hex.swift */; };
 		8A4A49892320C6190050B7B9 /* QuizTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4A49882320C6190050B7B9 /* QuizTopView.swift */; };
 		8A4A498B2320CF4D0050B7B9 /* QuizTopViewSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4A498A2320CF4D0050B7B9 /* QuizTopViewSpec.swift */; };
+		8A4A498E2320D8110050B7B9 /* QuizSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4A498D2320D8110050B7B9 /* QuizSettings.swift */; };
+		8A4A49902320DE040050B7B9 /* ReadyToPlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4A498F2320DE040050B7B9 /* ReadyToPlay.swift */; };
 		8AE33DC4231F437C00B15EE8 /* FBSnapshotTestCase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AE33DC2231F437B00B15EE8 /* FBSnapshotTestCase.framework */; };
 		8AE33DC5231F437C00B15EE8 /* Nimble_Snapshots.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AE33DC3231F437B00B15EE8 /* Nimble_Snapshots.framework */; };
 		8AE33DC6231F438B00B15EE8 /* FBSnapshotTestCase.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8AE33DC2231F437B00B15EE8 /* FBSnapshotTestCase.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -125,6 +127,8 @@
 		8A4A49852320B2890050B7B9 /* UIColor+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
 		8A4A49882320C6190050B7B9 /* QuizTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizTopView.swift; sourceTree = "<group>"; };
 		8A4A498A2320CF4D0050B7B9 /* QuizTopViewSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizTopViewSpec.swift; sourceTree = "<group>"; };
+		8A4A498D2320D8110050B7B9 /* QuizSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizSettings.swift; sourceTree = "<group>"; };
+		8A4A498F2320DE040050B7B9 /* ReadyToPlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadyToPlay.swift; sourceTree = "<group>"; };
 		8AE33DC2231F437B00B15EE8 /* FBSnapshotTestCase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSnapshotTestCase.framework; path = Carthage/Build/iOS/FBSnapshotTestCase.framework; sourceTree = "<group>"; };
 		8AE33DC3231F437B00B15EE8 /* Nimble_Snapshots.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble_Snapshots.framework; path = Carthage/Build/iOS/Nimble_Snapshots.framework; sourceTree = "<group>"; };
 		8AE33DC8231F56C200B15EE8 /* OverlayLoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayLoadingViewController.swift; sourceTree = "<group>"; };
@@ -231,6 +235,7 @@
 			isa = PBXGroup;
 			children = (
 				8A118F50231DF8BC00F211B6 /* FetchingState.swift */,
+				8A4A498F2320DE040050B7B9 /* ReadyToPlay.swift */,
 			);
 			path = "Quiz States";
 			sourceTree = "<group>";
@@ -351,6 +356,14 @@
 			path = TopView;
 			sourceTree = "<group>";
 		};
+		8A4A498C2320D7EC0050B7B9 /* Game Settings */ = {
+			isa = PBXGroup;
+			children = (
+				8A4A498D2320D8110050B7B9 /* QuizSettings.swift */,
+			);
+			path = "Game Settings";
+			sourceTree = "<group>";
+		};
 		8AE33DDA231F7BA300B15EE8 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -398,6 +411,7 @@
 		8AFFA679231DDD61000642DB /* PlusUltraQuiz */ = {
 			isa = PBXGroup;
 			children = (
+				8A4A498C2320D7EC0050B7B9 /* Game Settings */,
 				8AE33DDA231F7BA300B15EE8 /* Models */,
 				8A118F76231F2BF400F211B6 /* Theme */,
 				8F9BEE1C231F023C00E0F401 /* Utils */,
@@ -622,6 +636,7 @@
 				8A118F6C231E269C00F211B6 /* CustomDecodeError.swift in Sources */,
 				8A13FC722320A7780098D8B2 /* QuizFont.swift in Sources */,
 				8AE33DE2231F813200B15EE8 /* QuizURLs.swift in Sources */,
+				8A4A498E2320D8110050B7B9 /* QuizSettings.swift in Sources */,
 				8A118F6A231E1F8900F211B6 /* QuizViewModel.swift in Sources */,
 				8AE33DE0231F80BB00B15EE8 /* JavaQuizDataService.swift in Sources */,
 				8A118F51231DF8BC00F211B6 /* FetchingState.swift in Sources */,
@@ -630,6 +645,7 @@
 				8A4A49892320C6190050B7B9 /* QuizTopView.swift in Sources */,
 				8F9BEE1E231F025800E0F401 /* ViewCoding.swift in Sources */,
 				8A118F44231DEEF500F211B6 /* StateMachine.swift in Sources */,
+				8A4A49902320DE040050B7B9 /* ReadyToPlay.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
