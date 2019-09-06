@@ -49,7 +49,7 @@ final class QuizTopView: UIView {
         self.titleLabel.text = title
     }
     
-    func setUserInteractionEnabled(to boolean: Bool) {
+    func setSearchBarUserInteractionEnabled(to boolean: Bool) {
         self.searchBar.isUserInteractionEnabled = boolean
     }
     

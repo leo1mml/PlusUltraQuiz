@@ -14,4 +14,5 @@ protocol QuizPresentationLogic: AnyObject {
     func presentAlert(alertStructure: AlertStructure)
     func updateTime(timeLeft: String)
     func append(word: String)
+    func releaseSearchBar()
 }

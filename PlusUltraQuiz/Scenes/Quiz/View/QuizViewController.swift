@@ -40,8 +40,11 @@ final class QuizViewController: UIViewController {
 extension QuizViewController: QuizPresentationLogic {
     
     func presentInitialState(challengeTitle: String, wordsAmount: Int) {
-        overlayLoadingView.dismissView()
+        if !overlayLoadingView.isBeingDismissed {
+            overlayLoadingView.dismissView()
+        }
         quizView.presentEmptyState(title: challengeTitle, wordsAmount: wordsAmount)
+        quizView.setSearchBarUserInteractionEnabled(to: false)
     }
     
     func presentLoadingView() {
@@ -71,6 +74,10 @@ extension QuizViewController: QuizPresentationLogic {
     
     func append(word: String) {
         quizView.append(word: word)
+    }
+    
+    func releaseSearchBar() {
+        quizView.setSearchBarUserInteractionEnabled(to: true)
     }
 }
 

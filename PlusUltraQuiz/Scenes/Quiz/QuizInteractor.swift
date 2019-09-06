@@ -17,6 +17,7 @@ protocol QuizScreenBusinessLogic: AnyObject {
 final class QuizInteractor: QuizScreenBusinessLogic {
     
     private let dataService: DataService
+    private var challenge: Challenge?
     private var presenter: QuizPresenter
     private var challengeWords: [String] = []
     private var checkedWords: [String] = []
@@ -37,7 +38,10 @@ final class QuizInteractor: QuizScreenBusinessLogic {
     private func resetGame() {
         self.checkedWords = []
         timeLeft = QuizSettings.gameDuration
+        invalidateTimer()
         presenter.updateTimer(timeLeft: timeLeft)
+        let challengeViewModel = QuizViewModel(title: challenge?.title ?? "", keywords: [])
+        presenter.presentChallenge(title: challengeViewModel.title, wordsAmount: challengeViewModel.keywords.count)
     }
     
     private func fetchData() {
@@ -55,6 +59,7 @@ final class QuizInteractor: QuizScreenBusinessLogic {
     
     private func tryToPresentChallenge(on data: Data) {
         if let challenge = try? self.tryToGetChallenge(from: data) {
+            self.challenge = challenge
             present(challenge: challenge)
         } else {
             self.presenter.presentErrorAlert()
@@ -93,6 +98,7 @@ final class QuizInteractor: QuizScreenBusinessLogic {
     }
     
     func triggerTimer() {
+        presenter.releaseSearchBar()
         guard timer == nil else { return }
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(passTime), userInfo: nil, repeats: true)
     }
@@ -107,9 +113,13 @@ final class QuizInteractor: QuizScreenBusinessLogic {
     }
     
     private func loseGame() {
+        invalidateTimer()
+        presenter.presentLoseAlert(numberChecked: checkedWords.count, total: challengeWords.count)
+    }
+    
+    private func invalidateTimer() {
         timer?.invalidate()
         timer = nil
-        presenter.presentLoseAlert(numberChecked: checkedWords.count, total: challengeWords.count)
     }
     
     private func updateTimer() {

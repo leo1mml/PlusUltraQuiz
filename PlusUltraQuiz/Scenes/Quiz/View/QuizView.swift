@@ -45,6 +45,7 @@ final class QuizView: UIView {
     
     func presentEmptyState(title: String, wordsAmount: Int) {
         topView.set(title: title)
+        topView.setSearchBarUserInteractionEnabled(to: false)
         resetTimerView(wordsAmount: wordsAmount)
         clearTableView()
     }
@@ -55,8 +56,8 @@ final class QuizView: UIView {
     }
     
     private func clearTableView() {
-        tableView.alpha = 0
         tableViewDatasource.words = []
+        tableView.alpha = 0
         tableView.reloadData()
     }
     
@@ -65,9 +66,14 @@ final class QuizView: UIView {
     }
     
     func append(word: String) {
-        tableView.alpha = 1
+        topView.clearText()
         tableViewDatasource.words.append(word)
+        tableView.alpha = 1
         tableView.reloadData()
+    }
+    
+    func setSearchBarUserInteractionEnabled(to boolean: Bool) {
+        topView.setSearchBarUserInteractionEnabled(to: boolean)
     }
 }
 

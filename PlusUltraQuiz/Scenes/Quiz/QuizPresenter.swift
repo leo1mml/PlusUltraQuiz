@@ -16,6 +16,7 @@ protocol QuizPresenter: AnyObject {
     func updateTimer(timeLeft: Int)
     func addCheckedWord(_ word: String)
     func presentWinAlert()
+    func releaseSearchBar()
 }
 
 final class QuizPresenterImp: QuizPresenter {
@@ -80,5 +81,9 @@ final class QuizPresenterImp: QuizPresenter {
     
     func addCheckedWord(_ word: String) {
         presentationLogic?.append(word: word)
+    }
+    
+    func releaseSearchBar() {
+        presentationLogic?.releaseSearchBar()
     }
 }
