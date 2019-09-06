@@ -270,6 +270,7 @@
 		8A118F77231F2F2100F211B6 /* Subviews */ = {
 			isa = PBXGroup;
 			children = (
+				8A13FC752320AE6E0098D8B2 /* TimerViewSpec.swift */,
 				8A13FC742320AE5B0098D8B2 /* Timer */,
 				8A13FC732320AE4F0098D8B2 /* Loading */,
 				8A4A498A2320CF4D0050B7B9 /* QuizTopViewSpec.swift */,
@@ -297,7 +298,6 @@
 		8A13FC742320AE5B0098D8B2 /* Timer */ = {
 			isa = PBXGroup;
 			children = (
-				8A13FC752320AE6E0098D8B2 /* TimerViewSpec.swift */,
 			);
 			path = Timer;
 			sourceTree = "<group>";

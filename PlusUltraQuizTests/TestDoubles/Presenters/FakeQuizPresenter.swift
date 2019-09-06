@@ -18,6 +18,7 @@ class FakeQuizPresenter: QuizPresentationLogic {
     var hasCalledPresentLoading = false
     var hasCalledUpdateTime = false
     var hasCalledAppend = false
+    var hasCalledReleaseSearchBar = false
     
     func presentLoadingView() {
         hasCalledPresentLoading = true
@@ -37,6 +38,10 @@ class FakeQuizPresenter: QuizPresentationLogic {
     
     func append(word: String) {
         hasCalledAppend = true
+    }
+    
+    func releaseSearchBar() {
+        hasCalledReleaseSearchBar = true
     }
     
 }
